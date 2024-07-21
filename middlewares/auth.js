@@ -4,7 +4,7 @@ const router = require("../routes/staticRouter");
 const checkUserLogged = async (req, res, next) => {
     const userUid = req.cookies?.uid;
 
-    if(!userUid) next();
+    if(!userUid) return res.render('signup');
 
     return res.redirect("/shop");
 
