@@ -22,7 +22,7 @@ async function handleUserSignUp(req, res) {
     }
     else {
         return res.render('signUp.ejs', {
-            error: "Please Try with A different Email"
+            msg: "Please Try with A different Email"
         })
     }
 }

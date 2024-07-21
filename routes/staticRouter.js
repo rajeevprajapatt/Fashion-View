@@ -11,11 +11,11 @@ router.get("/", (req, res) => {
 router.get("/shop", (req, res) => {
     return res.render('shop');
 })
-router.get("/user/login", (req, res) => {
-    return res.render('login');
-})
+router.get("/user/login", checkUserLogged);
 
-router.get("/user/signup", checkUserLogged);
+router.get("/user/signup", (req, res) => {
+    res.render('signup');
+});
 
 
 

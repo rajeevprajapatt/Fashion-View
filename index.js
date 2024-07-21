@@ -11,7 +11,7 @@ const userRoute = require("./routes/user");
 const { checkUserLogged } = require("./middlewares/auth");
 const cookieParser = require('cookie-parser');
 
-mongoConnect("mongodb://127.0.0.1:27017/contact").then(() => {
+mongoConnect("mongodb://127.0.0.1:27017/FashionView").then(() => {
     console.log("MongoDB connected successfully");
 })
 
