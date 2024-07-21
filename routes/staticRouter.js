@@ -15,9 +15,7 @@ router.get("/user/login", (req, res) => {
     return res.render('login');
 })
 
-router.get("/user/signup", checkUserLogged, (req, res) => {
-    res.render('signup');
-});
+router.get("/user/signup", checkUserLogged);
 
 
 
