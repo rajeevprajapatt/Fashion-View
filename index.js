@@ -23,6 +23,6 @@ app.set("views", path.resolve("./views"));
 app.use(express.static(path.resolve("./public")));
 
 app.use("/", staticRouter);
-app.use("/user",userRoute);
+app.use("/user", userRoute);
 
 app.listen(PORT);
