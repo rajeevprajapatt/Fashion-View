@@ -1,5 +1,5 @@
 const express = require("express");
-const User = require("../models/user")
+const { User, Products } = require("../models/user")
 const { checkUserLogged } = require("../middlewares/auth");
 
 const router = express.Router();
@@ -16,6 +16,12 @@ router.get("/user/login", checkUserLogged);
 router.get("/user/signup", (req, res) => {
     res.render('signup');
 });
+
+router.get("/shop/:Women", async (req, res) => {
+    const Women = req.params.Women;
+
+    const items = await Products.findOne({Product_Category:Women});
+})
 
 
 
