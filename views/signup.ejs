@@ -120,7 +120,8 @@
     <div class="login-container" id="signup-Container">
 
         <h2>Sign Up</h2>
-        <form action="/user/signup" method="post">
+        <form action="/user/signup" method="post" enctype="multipart/form-data">
+            <input type="file" name="Profile-Img">
             <div class="input-group">
                 <label for="name"><i class='bx bxs-user'></i> Name</label>
                 <input type="text" name="name" placeholder="  Enter Your name...">

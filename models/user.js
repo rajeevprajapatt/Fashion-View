@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const { estimatedDocumentCount } = require('../../shortUrl/models/user');
+const { type } = require('jquery');
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -14,6 +15,9 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
+    },
+    path:{
+        type:String
     }
 }, { timestamps: true });
 
