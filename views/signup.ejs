@@ -11,6 +11,12 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="jquery-3.7.1.min.js"></script>
     <style>
+        * {
+            padding: 0;
+            margin: 0;
+            border: none;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(135deg, #667eea, #764ba2);
@@ -28,8 +34,8 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             text-align: center;
             width: 100%;
-            max-width: 400px;
-            /* margin: 5% 35%; */
+            max-width: 800px;
+            margin: 5% 35%;
         }
 
         .login-container h2 {
@@ -49,7 +55,7 @@
 
         .input-group input {
             width: 100%;
-            padding: 10px 3px;
+            padding: 10px 0px;
             margin-top: 5px;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -110,6 +116,7 @@
 </head>
 
 <body>
+
     <div class="login-container" id="signup-Container">
 
         <h2>Sign Up</h2>
@@ -126,26 +133,55 @@
                 <label for="password"><i class='bx bxs-lock-alt'></i> Password</label>
                 <input type="password" name="password" placeholder="  Enter your password...">
             </div>
-            <!-- <a href="#" class="forgot-password">Forgot password?</a> -->
+            <a href="#" class="forgot-password">Forgot password?</a>
             <button type="submit" class="login-button">Sign Up</button>
             <% if (locals.msg) { %>
                 <p class="warning">
                     <%= msg %>
                 </p>
-            <% } %>
-                <p>Sign Up With</p>
-                <div class="social-login">
-                    <a href="#"><i class='bx bxl-facebook-circle bx-tada' style='color:#1877F2'></i></a>
-                    <a href="#"><i class='bx bxl-twitter bx-tada' style="color: #1DA1F2;"></i></a>
-                    <a href="#"><i class='bx bxl-google bx-tada' style="color:red"></i></a>
-                </div>
-                <a href="/user/login" class="signup-link" id="#signup-link">Login</a>
+                <% } %>
+                    <!-- <p>Sign Up With</p>
+                    <div class="social-login">
+                        <a href="#"><i class='bx bxl-facebook-circle bx-tada' style='color:#1877F2'></i></a>
+                        <a href="#"><i class='bx bxl-twitter bx-tada' style="color: #1DA1F2;"></i></a>
+                        <a href="#"><i class='bx bxl-google bx-tada' style="color:red"></i></a>
+                    </div>-->
+                    <a href="/user/login" class="signup-link" id="#signup-link">Login</a> 
         </form>
     </div>
+    <!--
+            <div class="input-group">
+                <label for="name"><i class='bx bxs-user'></i> Name</label>
+                <input type="text" name="name" placeholder="  Enter Your name...">
+            </div>
+            <div class="input-group">
+                <label for="email"><i class='bx bxs-envelope'></i> Email</label>
+                <input type="text" name="email" placeholder="  Enter your email...">
+            </div>
+            <div class="input-group">
+                <label for="password"><i class='bx bxs-lock-alt'></i> Password</label>
+                <input type="password" name="password" placeholder="  Enter your password...">
+            </div>
+            <a href="#" class="forgot-password">Forgot password?</a> 
+            <button type="submit" class="login-button">Sign Up</button>
+            <% if (locals.msg) { %>
+                <p class="warning">
+                    <%= msg %>
+                </p>
+                <% } %>
+                    <p>Sign Up With</p>
+                    <div class="social-login">
+                        <a href="#"><i class='bx bxl-facebook-circle bx-tada' style='color:#1877F2'></i></a>
+                        <a href="#"><i class='bx bxl-twitter bx-tada' style="color: #1DA1F2;"></i></a>
+                        <a href="#"><i class='bx bxl-google bx-tada' style="color:red"></i></a>
+                    </div>
+                    <a href="/user/login" class="signup-link" id="#signup-link">Login</a>
+        </form>
+    </div> -->
 
     <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script>-->
-    
-    <script src="js/app.js"></script> 
+
+    <script src="js/app.js"></script>
 
 </body>
 
