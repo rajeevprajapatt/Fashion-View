@@ -47,8 +47,22 @@
         </div>
 
         <section class="products">
+            <% if (locals.data) { %>
+                <% data.forEach(item => { %>
+                   <div class="product-divs">
+                       <img src="<%= item.Product_ImgPath1 %>" alt="">
+                       <p><%= item.Product_Name %></p>
+                       <p><%= item.Product_Size_Type %></p>
+                       <p>&#x20b9 <%= item.Product_Price %>
+                           <span
+                               style="text-decoration: line-through;font-size: 1rem; padding: 1rem .8rem; color: grey;"><%= item.Product_CutPrice %></span>
+                       </p>
+                   </div>
+                <% }) %>
+               <% } %>
+            
             <div class="product-divs">
-                <img src="Product-Images/1720675674_8732156.webp" alt="">
+                <img src="/Product-Images/1720675674_8732156.webp" alt="">
                 <p>Product Name...</p>
                 <p>Oversized Top</p>
                 <p>&#x20b9 899
@@ -56,42 +70,7 @@
                         style="text-decoration: line-through;font-size: 1rem; padding: 1rem .8rem; color: grey;">1600</span>
                 </p>
             </div>
-            <div class="product-divs">
-                <img src="Product-Images/1720675674_8732156.webp" alt="">
-                <p>Product Name...</p>
-                <p>Oversized Top</p>
-                <p>&#x20b9 899
-                    <span
-                        style="text-decoration: line-through;font-size: 1rem; padding: 1rem .8rem; color: grey;">1600</span>
-                </p>
-            </div>
-            <div class="product-divs">
-                <img src="Product-Images/1720675674_8732156.webp" alt="">
-                <p>Product Name...</p>
-                <p>Oversized Top</p>
-                <p>&#x20b9 899
-                    <span
-                        style="text-decoration: line-through;font-size: 1rem; padding: 1rem .8rem; color: grey;">1600</span>
-                </p>
-            </div>
-            <div class="product-divs">
-                <img src="Product-Images/1720675674_8732156.webp" alt="">
-                <p>Product Name...</p>
-                <p>Oversized Top</p>
-                <p>&#x20b9 899
-                    <span
-                        style="text-decoration: line-through;font-size: 1rem; padding: 1rem .8rem; color: grey;">1600</span>
-                </p>
-            </div>
-            <div class="product-divs">
-                <img src="Product-Images/1720675674_8732156.webp" alt="">
-                <p>Product Name...</p>
-                <p>Oversized Top</p>
-                <p>&#x20b9 899
-                    <span
-                        style="text-decoration: line-through;font-size: 1rem; padding: 1rem .8rem; color: grey;">1600</span>
-                </p>
-            </div>
+            
         </section>
 </body>
 

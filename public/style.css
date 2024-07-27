@@ -145,54 +145,15 @@ section {
   display: none;
 }
 
-.header .header-2 {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
-    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-  border: 1px solid rgb(163, 161, 161);
+
+.box {
+  /* margin-top: 3.7rem; */
+  width: 100%;
+  height: auto;
 }
 
-.header .header-2 .navbar {
-  text-align: center;
-}
-
-.header .header-2 .navbar a {
-  color: #fff;
-  display: inline-block;
-  padding: 1rem 1.7rem;
-  font-size: 1.7rem;
-}
-
-.header .header-2 .navbar a:hover {
-  background: rgba(0, 0, 0, 0.1);
-}
-
-.header .header-2.active {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-}
-
-.button-navbar {
-  text-align: center;
-  background: var(--green);
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  display: none;
-}
-
-.button-navbar a {
-  font-size: 2.5rem;
-  padding: 2rem;
-  color: #fff;
-}
-.button-navbar a:hover {
-  background: rgba(0, 0, 0, 0.1);
+.box img {
+  width: 100%;
 }
 
 .home1 swiper-container {

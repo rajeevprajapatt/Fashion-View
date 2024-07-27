@@ -30,6 +30,9 @@ const ProductSchema = new mongoose.Schema({
     Product_Size_Type: {
         type: String,
     },
+    Product_Description:{
+        type:String
+    },
     Product_Category: {
         type: String,
     },

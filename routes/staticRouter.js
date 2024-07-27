@@ -5,8 +5,15 @@ const { checkUserLogged } = require("../middlewares/auth");
 const router = express.Router();
 
 
-router.get("/", (req, res) => {
-    return res.render('index');
+router.get("/",async (req, res) => {
+    const men = await Products.find({Product_Category:"Men"});
+    const women = await Products.find({Product_Category:"Women"});
+    return res.render('index',{
+        totalmen:men.length,
+        totalwomen:women.length
+
+    });
+    
 });
 router.get("/shop", (req, res) => {
     return res.render('shop');
@@ -17,10 +24,22 @@ router.get("/user/signup", (req, res) => {
     res.render('signup');
 });
 
-router.get("/shop/:Women", async (req, res) => {
-    const Women = req.params.Women;
+router.get("/shop", async (req, res) => {
+    const varr = req.params.Men;
 
-    const items = await Products.findOne({Product_Category:Women});
+    // const items = await Products.findOne({Product_Category:Women});
+    console.log(varr);
+
+    res.render("shop");
+})
+router.get("/shop/:Women", async (req, res) => {
+    const Women = req.params.Women.split(":")[1];
+
+    const items = await Products.find({Product_Category:Women});
+    console.log(items);
+    res.render("shop",{
+        data:items,
+    });
 })
 
 
