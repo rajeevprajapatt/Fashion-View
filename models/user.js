@@ -64,9 +64,95 @@ const ProductSchema = new mongoose.Schema({
 
 const Products = mongoose.model("Products", ProductSchema);
 
+
+const womenProductsSchema = new mongoose.Schema({
+    Product_Name: {
+        type: String,
+    },
+    Product_Size_Type: {
+        type: String,
+    },
+    Product_Description:{
+        type:String
+    },
+    Product_Category: {
+        type: String,
+    },
+    Product_Type: {
+        type: String,
+    },
+    Product_Price: {
+        type: Number,
+    },
+    Product_CutPrice: {
+        type: Number,
+    },
+    Product_ImgPath1: {
+        type: String,
+    },
+    Product_ImgPath2: {
+        type: String,
+    },
+    Product_ImgPath3: {
+        type: String,
+    },
+    Product_ImgPath4: {
+        type: String,
+    },
+    Product_Sizes: {
+        type: Array
+    }
+})
+
+
+const menProductsSchema = new mongoose.Schema({
+    Product_Name: {
+        type: String,
+    },
+    Product_Size_Type: {
+        type: String,
+    },
+    Product_Description:{
+        type:String
+    },
+    Product_Category: {
+        type: String,
+    },
+    Product_Type: {
+        type: String,
+    },
+    Product_Price: {
+        type: Number,
+    },
+    Product_CutPrice: {
+        type: Number,
+    },
+    Product_ImgPath1: {
+        type: String,
+    },
+    Product_ImgPath2: {
+        type: String,
+    },
+    Product_ImgPath3: {
+        type: String,
+    },
+    Product_ImgPath4: {
+        type: String,
+    },
+    Product_Sizes: {
+        type: Array
+    }
+})
+
+const womenProducts = mongoose.model("womenProduct",womenProductsSchema)
+const menProducts = mongoose.model("menProduct",menProductsSchema)
+
+
 module.exports = {
     User,
-    Products
+    Products,
+    womenProducts,
+    menProducts,
 };
 
 
