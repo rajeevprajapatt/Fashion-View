@@ -1,5 +1,5 @@
 const express = require("express");
-const { womenProducts, menProducts } = require("../models/user");
+const { womenProducts, menProducts } = require("../models/productSchema");
 
 async function WomenProducts(req, res) {
     // const Women = req.params.Women.split(":")[1];
@@ -12,6 +12,7 @@ async function WomenProducts(req, res) {
 async function MenProducts(req, res) {
     // const Women = req.params.Women.split(":")[1];
     const items = await menProducts.find({ });
+    console.log("weuif");
     res.render("shop", {
         data: items,
     }) 

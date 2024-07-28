@@ -48,6 +48,9 @@
 
         <section class="products">
             <% if (locals.data) { %>
+                <% if (data.length == 0) { %>
+                 <p>Add some items</p>
+                <% } %>
                 <% data.forEach(item => { %>
                    <div class="product-divs">
                        <img src="<%= item.Product_ImgPath1 %>" alt="">
@@ -59,18 +62,7 @@
                        </p>
                    </div>
                 <% }) %>
-               <% } %>
-            
-            <div class="product-divs">
-                <img src="/Product-Images/1720675674_8732156.webp" alt="">
-                <p>Product Name...</p>
-                <p>Oversized Top</p>
-                <p>&#x20b9 899
-                    <span
-                        style="text-decoration: line-through;font-size: 1rem; padding: 1rem .8rem; color: grey;">1600</span>
-                </p>
-            </div>
-            
+               <% } %>    
         </section>
 </body>
 

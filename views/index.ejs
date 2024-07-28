@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bookly</title>
+    <title>Fashion View</title>
     <!-- custom css file link -->
     <link rel="stylesheet" href="/style.css">
 
@@ -25,7 +25,7 @@
     <header class="header">
         <div class="header-1">
             <a href="#" class="logo"><i class='fas fa-book'></i>FASHION VIEW</a>
-           
+
 
             <div class="icons">
                 <form action="" class="search-form">
@@ -44,13 +44,32 @@
 
     <!-- header section ends -->
 
-    <!-- home section starts  -->
 
-    <div class="box" id="box">
-        <img id="boxImage" src="" alt="">
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <a href="#"><img src="/images/catban-020230630115529.webp" style="width:100%"></a>
+        </div>
+
+        <div class="mySlides fade">
+            <a href="#"><img src="/images/catban-320230729113349.webp" style="width:100%"></a>
+        </div>
+        <div class="mySlides fade">
+            <a href="#"><img src="/images/catban-120230729114515.webp" style="width:100%"></a>
+        </div>
+        <div class="mySlides fade">
+            <a href="#"><img src="/images/catban-120230803115418.webp" style="width:100%"></a>
+        </div>
+
     </div>
+    <br>
 
-    <!-- home section ends  -->
+    <div style="text-align:center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
 
     <div class="services">
         <img src="/images/Screenshot 2023-04-02 213532.png" alt="">
@@ -58,29 +77,33 @@
 
     <section class="categories">
         <h1 class="heading">CATEGORIES</h1>
-        
+
         <div class="category-container">
-            <a href="/shop/:Women">
+            <a href="/shop/Women">
                 <div class="categories-divs">
                     <img src="/images/pexels-anastasiya-gepp-654466-1462637.jpg" width="100%" alt="women image">
                     <div class="img-text women-class">
                         <% if (locals.totalwomen) { %>
-                         
-                        <% } %>
-                        <h3>Women</h3>
-                        <p><%= totalwomen %> items</p>
+
+                            <% } %>
+                                <h3>Women</h3>
+                                <p>
+                                    <%= totalwomen %> items
+                                </p>
                     </div>
                 </div>
             </a>
-            <a href="/shop/:Men">
+            <a href="/shop/Men">
                 <div class="categories-divs">
-                    <img src="/images/pexels-yogendras31-3595231.jpg" width="100%" alt="men image">
+                    <img src="examples/2412255.jpg" width="100%" alt="men image">
                     <div class="img-text  men-class">
                         <h3>Men</h3>
                         <% if (locals.totalmen) { %>
-                         
-                        <% } %>
-                        <p><%= totalmen %> items</p>
+
+                            <% } %>
+                                <p>
+                                    <%= totalmen %> items
+                                </p>
                     </div>
                 </div>
             </a>
