@@ -19,8 +19,8 @@ const img = multer({ storage });
 
 router.get("/", HomeActivities);
 
-router.get("/shop", (req, res) => {
-    return res.render('shop');
+router.get("/Shop", (req, res) => {
+    return res.render('Shop');
 });
 
 router.get("/user/login", checkUserLogged);
@@ -30,12 +30,12 @@ router.get("/user/signup", (req, res) => {
 });
 
 router.get("/ItemsInsertion", (req, res) => {
-    res.render("FVitemInsertion");
+    res.render('FVitemsInsertion');
 });
 
 router.post("/Insert", img.array('imgPath', 4), ItemInsertion);
 
-router.get("/shop/Women", GetWomenProducts);
-router.get("/shop/Men", GetMenProducts);
+router.get("/Shop/Women", GetWomenProducts);
+router.get("/Shop/Men", GetMenProducts);
 
 module.exports = router;
