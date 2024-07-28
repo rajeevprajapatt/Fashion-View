@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin: 5% 20%;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="/Insert" method="post" enctype="multipart/form-data">
+    <div><label for="">Product_Name</label>
+      <input type="text" name="Product_Name"><br>
+    </div>
+    <div><label for="">Product_Size_Type</label>
+      <input type="text" name="Product_Size_Type"><br>
+    </div>
+    <div><label for="">Product_Description</label>
+      <textarea name="Product_Description" id="" maxlength="300"></textarea><br>
+    </div>
+    <div><label for="">Product_Category</label>
+      <select name="Product_Category" id="">
+        <option value="">--Select Category--</option>
+        <option value="Women">Women</option>
+        <option value="Men">Men</option>
+      </select><br>
+    </div>
+    <div><label for="">Product_Type</label>
+      <input type="text" name="Product_Type"><br>
+    </div>
+    <div><label for="">Product_Price</label>
+      <input type="number" name="Product_Price"><br>
+    </div>
+    <div><label for="">Product_CutPrice</label>
+      <input type="number" name="Product_CutPrice"><br>
+    </div>
+    <div><label for="">Select Product Images</label>
+      <input type="file" name="imgPath" multiple><br>
+    </div>
+    <div><label for="">Product_Sizes</label>
+      <input type="text" name="Product_Sizes"><br>
+    </div>
+
+
+    <button type="submit">submit</button>
+  </form>
+
+  <!-- "Product_Name": "Solids: Forest Green",
+  "Product_Size_Type": "Women Tank Top",
+  "Product_Description": "Style your wardrobe with this classic ribbed cropped top. Wear it to a casual workday, party, or for a night-in with your friends - this top is the universal answer to 'What should I wear?'",
+  "Product_Category": "Women",
+  "Product_Type": "Tops",
+  "Product_Price": 999,
+  "Product_CutPrice": 1699,
+  "Product_ImgPath1": "/Product-Images/1720675674_7406530.webp",
+  "Product_ImgPath2": "/Product-Images/1720675674_7522967.webp",
+  "Product_ImgPath3": "/Product-Images/1720675674_7317829.webp",
+  "Product_ImgPath4": "/Product-Images/1720675674_8732156.webp",
+  "Product_Sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+  ] -->
+</body>
+
+</html>

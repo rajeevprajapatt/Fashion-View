@@ -55,7 +55,7 @@ const menProductsSchema = new mongoose.Schema({
         type: Number,
     },
     Product_ImgPaths: {
-        type: String,
+        type: Array,
     },
     Product_Sizes: {
         type: Array
