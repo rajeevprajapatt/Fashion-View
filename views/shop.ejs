@@ -18,7 +18,7 @@
 <body>
     <header class="header">
         <div class="header-1">
-            <a href="#" class="logo"><i class='fas fa-book'></i>Book Shop </a>
+            <a href="#" class="logo">Fashion View </a>
             <form action="" class="search-form">
                 <input type="search" name="" placeholder="Search here....." id="search-box">
                 <label form="search-box" class="fas fa-search"></label>
@@ -36,10 +36,16 @@
         <img src="/images/catban-120230729114515.webp" alt="">
     </div>
 
-    <div style="display: flex; align-items: center;justify-content: center; gap: 2px;">
-        <span style="border: 1px solid; padding: 3rem;border-radius: 3%;">rajeev prajapat</span>
-        <span style="border: 1px solid; padding: 3rem;border-radius: 3%;">rajeev</span>
-        <span style="border: 1px solid; padding: 3rem;border-radius: 3%;">rajeev</span>
+    <div class="AllCategories">
+        <% if (locals.Categories) { %>
+            <% Categories.forEach(element=> { %>
+                <a href="#">
+                    <div>
+                        <%= element %>
+                    </div>
+                </a>
+                <% }) %>
+                    <% } %>
     </div>
 
     <section class="products">
