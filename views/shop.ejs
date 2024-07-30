@@ -30,40 +30,42 @@
                 <div id="login-btn" class="fas fa-user"></div>
             </div>
         </div>
+    </header>
 
-        <div class="Items-Section2">
-            <p style="color: rgb(255, 255, 255);"><a style="color: rgb(255, 255, 255);" href="/">Home</a> /
-                Shop
-                <br> <span style="color: rgb(39, 39, 39);">Books</span> - 07 items
-            </p>
-            <select name="Sorting-Options" id="Sorting-Options" class="sorting-options">
-                <option value="">Select Sorting Options</option>
-                <option value="A-to-Z">A to Z</option>
-                <option value="Price-High-to-Low">Price-High to Low</option>
-                <option value="Price-Low-to-High">Price-Low to High</option>
-                <option value="Newest">Newest</option>
-                <option value="Popularity">Popularity</option>
-            </select>
-        </div>
+    <div class="headingImg">
+        <img src="/images/catban-120230729114515.webp" alt="">
+    </div>
 
-        <section class="products">
-            <% if (locals.data) { %>
-                <% if (data.length == 0) { %>
-                 <p>Add some items</p>
+    <div style="display: flex; align-items: center;justify-content: center; gap: 2px;">
+        <span style="border: 1px solid; padding: 3rem;border-radius: 3%;">rajeev prajapat</span>
+        <span style="border: 1px solid; padding: 3rem;border-radius: 3%;">rajeev</span>
+        <span style="border: 1px solid; padding: 3rem;border-radius: 3%;">rajeev</span>
+    </div>
+
+    <section class="products">
+        <% if (locals.data) { %>
+            <% if (data.length==0) { %>
+                <p>Add some items</p>
                 <% } %>
-                <% data.forEach(item => { %>
-                   <div class="product-divs">
-                       <img src="/<%= item.Product_ImgPaths[2] %>" alt="">
-                       <p><%= item.Product_Name %></p>
-                       <p><%= item.Product_Size_Type %></p>
-                       <p>&#x20b9 <%= item.Product_Price %>
-                           <span
-                               style="text-decoration: line-through;font-size: 1rem; padding: 1rem .8rem; color: grey;"><%= item.Product_CutPrice %></span>
-                       </p>
-                   </div>
-                <% }) %>
-               <% } %>    
-        </section>
+                    <% data.forEach(item=> { %>
+                        <div class="product-divs">
+                            <img src="/<%= item.Product_ImgPaths[2] %>" alt="">
+                            <p>
+                                <%= item.Product_Name %>
+                            </p>
+                            <p>
+                                <%= item.Product_Size_Type %>
+                            </p>
+                            <p>&#x20b9 <%= item.Product_Price %>
+                                    <span
+                                        style="text-decoration: line-through;font-size: 1rem; padding: 1rem .8rem; color: grey;">
+                                        <%= item.Product_CutPrice %>
+                                    </span>
+                            </p>
+                        </div>
+                        <% }) %>
+                            <% } %>
+    </section>
 </body>
 
 </html>

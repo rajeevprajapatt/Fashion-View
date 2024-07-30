@@ -1,5 +1,17 @@
 const mongoose = require("mongoose");
 
+const menCategorySchema = new mongoose.Schema({
+    Categories: {
+        type: Array,
+    }
+})
+
+const womenCategorySchema = new mongoose.Schema({
+    Categories: {
+        type: Array,
+    }
+})
+
 
 const womenProductsSchema = new mongoose.Schema({
     Product_Name: {
@@ -65,4 +77,7 @@ const menProductsSchema = new mongoose.Schema({
 const womenProducts = mongoose.model("womenProduct", womenProductsSchema);
 const menProducts = mongoose.model("menProduct", menProductsSchema);
 
-module.exports = { womenProducts, menProducts };
+const menCategories = mongoose.model("menCategories", menCategorySchema);
+const womenCategories = mongoose.model("womenCategories", womenCategorySchema);
+
+module.exports = { womenProducts, menProducts, menCategories, womenCategories };
