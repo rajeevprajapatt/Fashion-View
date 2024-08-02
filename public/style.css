@@ -6,13 +6,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 :root {
-  --main-color: #ede8f5;
+  /* --main-color: #ede8f5; */
+  --snd-color:#f0f3f2;
   --heading-color: #43187e;
   --heading-font:"Montserrat", sans-serif;
   --box-shadow: 0 0.5rem 1rem #0000001a;
   --basic-font:'Lato',sans-serif;
   --black:#000000;
   --text-color:rgb(59, 58, 58);
+  --normal-border:1px solid var(--text-color);
 }
 
 * {
@@ -32,6 +34,7 @@ html {
   overflow-x: hidden;
   scroll-padding-top: 5rem;
   scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 html::-webkit-scrollbar {
@@ -47,8 +50,8 @@ body {
   background: var(--main-color);
 }
 
-section {
-  padding: 5rem 9%;
+.container{
+  margin-bottom: 2.5rem;
 }
 
 p,span{
@@ -59,7 +62,7 @@ p,span{
 .heading {
   font-size: 3.5em;
   text-align: center;
-  margin-bottom: 2rem;
+  padding-bottom: 2rem;
   position: relative;
   font-family: var(--heading-font);
   font-weight: 500;
@@ -75,8 +78,9 @@ p,span{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid var(--text-color);
+  border-bottom: var(--normal-border);
   box-shadow: var(--box-shadow);
+  backdrop-filter: blur(8px);
 }
 
 .header .header-1 .logo {
@@ -111,7 +115,7 @@ p,span{
   color: var(--text-color);
   cursor: pointer;
   transition: 0.5s;
-  background-color: var(--main-color);
+  background-color: var(--snd-color);
   padding: 1rem 0.5rem;
 }
 
@@ -137,15 +141,6 @@ p,span{
   display: none;
 }
 
-.services {
-  width: 100%;
-  margin-top: 2rem;
-}
-.services img {
-  width: 100%;
-  height: 100%;
-}
-
 .mySlides {
   display: none;
   width: 100%;
@@ -168,6 +163,9 @@ p,span{
   display: inline-block;
   transition: background-color 0.6s ease;
 }
+.activate{
+  background-color: var(--text-color);
+}
 
 .fade {
   animation-name: fade;
@@ -183,13 +181,21 @@ p,span{
   }
 }
 
+.services {
+  width: 100%;
+}
+
+.services img {
+  width: 100%;
+  height: 100%;
+}
 
 .category-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   gap: 3rem;
-  margin: 0 15%;
+  margin: 0 20%;
   overflow: hidden;
 }
 
@@ -217,7 +223,7 @@ p,span{
 }
 
 .women-class {
-  left: 65%;
+  left: 60%;
   top: 20%;
 }
 .men-class {
@@ -226,17 +232,21 @@ p,span{
 }
 
 .categories-divs .img-text h3 {
-  font-size: 3rem;
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 2.5rem;
 }
 
 .categories-divs .img-text p {
-  font-size: 1.5rem;
+  font-family: var(--basic-font);
+  font-size: 1.3rem;
 }
 
 marquee {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
-  font-size: 1.5rem;
+  background: var(--snd-color);
+  color: black;
+  font-size:2rem;
+  font-family: var(--heading-font);
   padding: 1rem 0;
   word-spacing: 1rch;
   white-space: nowrap;
@@ -244,20 +254,25 @@ marquee {
 
 .arrivals {
   text-align: center;
-  padding: 20px;
+  /* padding: 20px; */
+}
+
+.arrivals > .container{
+  margin: 0 15%;
 }
 
 .arrivals-div {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
   justify-content: center;
-  gap: 30px;
+  align-items: center;
+  gap: 1rem;
   cursor: pointer;
 }
 
 .arrival {
   background-color: #fff;
-  border-radius: 10px;
+  border: var(--normal-border);
   overflow: hidden;
   max-width: 300px;
   text-align: center;
@@ -282,6 +297,146 @@ marquee {
   background-color: #000;
   color: #fff;
   overflow: hidden;
+}
+
+
+.newsletter {
+  background: url("/images/HOME-2.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.newsletter form {
+  max-width: 45rem;
+  font-family: var(--basic-font);
+  text-align: center;
+  padding: 8rem 3rem;
+  margin-left: 4rem;
+}
+
+.newsletter form h3 {
+  font-size: 2.2rem;
+  color: #fff;
+  padding-bottom: 0.7rem;
+  font-weight: normal;
+}
+
+.newsletter form .box {
+  width: 100%;
+  margin: 0.7rem 0;
+  padding: 1rem 1.2rem;
+  font-size: 1.6rem;
+  color: var(--black);
+  border-radius: 0.5rem;
+  text-transform: none;
+}
+
+.btn{
+  margin-top: 1rem;
+  font-size: 2rem;
+  padding: .8rem 2rem;
+  border-radius: 0.5rem;
+}
+
+.Homegrown{
+  margin: 2.5rem 0;
+  width: 100%;
+}
+@keyframes typingForward{
+  from{width: 32%;}
+  to{width: 100%;}
+}
+@keyframes typingBackward{
+  from{width: 170%;}
+  to{width: 100%;}
+}
+.Homegrown div{
+  font-family: var(--heading-font);
+  text-align: center;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+.Homegrown .container div:nth-child(1){
+  background-color: #667eea;
+}
+.Homegrown div:nth-child(1) h5{
+  animation: typingForward 4s forwards 1;
+}
+.Homegrown div:nth-child(2) h5{
+  animation: typingBackward 4s forwards 1;
+}
+.Homegrown div h5{
+  font-size: 3rem;
+  padding: .5rem 0;
+}
+
+footer{
+  background-color: #f0f3f2;
+}
+
+footer .footer{
+  margin: 0% 5%;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .links{
+  display: flex;
+  flex-direction: column;
+  font-family: var(--basic-font);
+}
+
+.footer .links a{
+  font-size: 1.5rem;
+  padding: .7rem 2.2rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+footer h4{
+  font-size: 2.5rem;
+  padding: 1rem 0 1.2rem 2rem;
+  font-family: var(--heading-font);
+}
+
+footer p{
+  color: var(--text-color);
+  font-size: 1.5rem;
+  padding: .7rem 2rem;
+}
+
+footer i{
+  color: var(--text-color);
+  font-size: 1.8rem;
+  padding: 0rem 0 1rem 0rem;
+}
+footer i:nth-child(1){
+  padding-left: 2.5rem;
+}
+footer img{
+  width: 100%;
+}
+
+.footer-div a:hover{
+  color: #43187e;
+}
+
+footer .footer .footer-div:nth-child(4) p{
+  padding: 1rem 0;
+}
+
+.copyright{
+  background-color: #f0f3f2;
+  font-family: var(--heading-font);
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  padding: 2rem 0;
+}
+.copyright p{
+  font-weight: 400;
 }
 
 
@@ -313,61 +468,6 @@ marquee {
   width: 100%;
   border-bottom: 1px solid rgb(196, 191, 191);
 }
-.newsletter {
-  background: url("/images/HOME-2.jpg") no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-.newsletter form {
-  max-width: 45rem;
-  /* margin-left: auto;  */
-  text-align: center;
-  padding: 5rem 0;
-}
-
-.newsletter form h3 {
-  font-size: 2.2rem;
-  color: #fff;
-  padding-bottom: 0.7rem;
-  font-weight: normal;
-}
-
-.newsletter form .box {
-  width: 100%;
-  margin: 0.7rem 0;
-  padding: 1rem 1.2rem;
-  font-size: 1.6rem;
-  color: var(--black);
-  border-radius: 0.5rem;
-  text-transform: none;
-}
-
-.arrivals .arrivals-slider .box .image img {
-  height: 32rem;
-}
-.arrivals .arrivals-slider .box .stars i {
-  color: var(--green);
-  font-size: 2rem;
-  padding: 1rem 0;
-}
-.arrivals .arrivals-slider .box .stars {
-  background-color: #eee;
-}
-
-.arrivals .arrivals-slider .box h3 {
-  font-size: 2rem;
-  color: var(--black);
-  background-color: #eee;
-}
-
-.headingImg {
-  margin-top: 5rem;
-}
-.headingImg img {
-  width: 100%;
-}
 
 .AllCategories {
   display: grid;
@@ -394,12 +494,9 @@ marquee {
   .header .header-1 {
     padding: 2rem;
   }
-  section {
-    padding: 3rem 2rem;
-  }
 
   .slideshow-container {
-    margin-top: 8rem;
+    margin-top: 8.1rem;
   }
 }
 
@@ -409,9 +506,6 @@ marquee {
   }
   body {
     padding-bottom: 6rem;
-  }
-  .header .header-2 {
-    /* display: none; */
   }
 
   .button-navbar {
@@ -424,7 +518,7 @@ marquee {
 
   .header .header-1 {
     box-shadow: var(--box-shadow);
-    position: relative;
+    position: fixed;
   }
 
   .header .header-1 .search-form {
@@ -438,7 +532,7 @@ marquee {
     top: 115%;
   }
   .slideshow-container {
-    margin-top: 0.1rem;
+    margin-top: 8.1rem;
   }
 
   .newsletter {
@@ -453,14 +547,35 @@ marquee {
     flex-direction: column;
     align-items: center;
   }
+  .category-container{
+    margin: 0 10%;
+  }
 
   .arrival {
     max-width: 90%;
+  }
+  .arrivals-div{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .categories-divs .img-text h3{
+    font-size: 1.6rem;
+  }
+  .categories-divs .img-text p{
+    font-size: 1rem;
+  }
+  footer .footer{
+    grid-template-columns: repeat(2,1fr);
   }
 }
 
 @media (max-width: 450px) {
   html {
     font-size: 50%;
+  }
+  .arrivals-div{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .categories-divs .img-text h3{
+    font-size: 1.5rem;
   }
 }

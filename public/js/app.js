@@ -26,24 +26,24 @@ let slideshow = () => {
 slideshow();
 
 
-window.onscroll = () => {
-    searchForm.classList.remove('active');
-    if (window.screenY > 80) {
-        document.querySelector('.header .header-2').classList.add('active');
-    }
-    else {
-        document.querySelector('.header .header-2').classList.remove('active');
-    }
-}
+// window.onscroll = () => {
+//     searchForm.classList.remove('active');
+//     if (window.screenY > 80) {
+//         document.querySelector('.header .header-1').classList.add('active');
+//     }
+//     else {
+//         document.querySelector('.header .header-1').classList.remove('active');
+//     }
+// }
 
-window.onload = () => {
-    if (window.screenY > 80) {
-        document.querySelector('.header .header-2').classList.add('active');
-    }
-    else {
-        document.querySelector('.header .header-2').classList.remove('active');
-    }
-}
+// window.onload = () => {
+//     if (window.screenY > 80) {
+//         document.querySelector('.header .header-2').classList.add('active');
+//     }
+//     else {
+//         document.querySelector('.header .header-2').classList.remove('active');
+//     }
+// }
 
 
 
