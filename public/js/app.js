@@ -19,12 +19,11 @@ let slideshow = () => {
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" activate", "");
     }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " activate";
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " activate";
     setTimeout(slideshow, 2000);
 }
 slideshow();
-
 
 // window.onscroll = () => {
 //     searchForm.classList.remove('active');

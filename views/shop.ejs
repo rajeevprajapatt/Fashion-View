@@ -16,6 +16,8 @@
 </head>
 
 <body>
+
+    <!-- HEADER SECTION  -->
     <header class="header">
         <div class="header-1">
             <a href="#" class="logo">Fashion View </a>
@@ -31,15 +33,16 @@
             </div>
         </div>
     </header>
+    <!-- HEADER SECTION ENDS  -->
 
     <div class="headingImg">
         <img src="/images/catban-120230729114515.webp" alt="">
     </div>
 
     <div class="AllCategories">
-        <% if (locals.Categories) { %>
+        <% if (locals.Categories || locals.path) { %>
             <% Categories.forEach(element=> { %>
-                <a href="#">
+                <a href="<%= path %>/<%= element %>">
                     <div>
                         <%= element %>
                     </div>
@@ -55,7 +58,7 @@
                 <% } %>
                     <% data.forEach(item=> { %>
                         <div class="product-divs">
-                            <img src="/<%= item.Product_ImgPaths[2] %>" alt="">
+                            <img src="/<%= item.Product_ImgPaths[1] %>" alt="">
                             <p>
                                 <%= item.Product_Name %>
                             </p>
@@ -150,6 +153,7 @@
         <p>&copy; 2023 Developed By Rajeev Prajapat</p>
     </div>
     <!-- COPYRIGHT SECTION ENDS  -->
+     <script src="/js/shop.js"></script>
 </body>
 
 </html>
