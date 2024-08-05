@@ -18,7 +18,6 @@ const storage = multer.diskStorage({
 const img = multer({ storage });
 
 router.get("/", HomeActivities);
-
 router.get("/Shop", (req, res) => {
     return res.render('Shop');
 });
@@ -35,8 +34,8 @@ router.get("/ItemsInsertion", (req, res) => {
 
 router.post("/Insert", img.array('imgPath', 4), ItemInsertion);
 
+// router.get("/Shop/Women", AllWomenProducts);
 router.get("/Shop/Women", AllWomenProducts);
-router.get("/Shop/Women/:category", GetWomenProducts);
 router.get("/Shop/Men", GetMenProducts);
 
 // router.get("/Shop/Women/:para",(req,res)=>{

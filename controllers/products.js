@@ -2,14 +2,14 @@ const express = require("express");
 const Url = require("url");
 const { womenProducts, menProducts, womenCategories, menCategories } = require("../models/productSchema");
 
-async function AllWomenProducts(req,res) {
+async function AllWomenProducts(req, res) {
     const items = await womenProducts.find({});
     const category = await womenCategories.findOne({ Categories: { $type: "array" } });
     const Categories = category.Categories;
     res.render("shop", {
         data: items,
         Categories,
-        path:req.path
+        path: req.path
     })
 }
 
@@ -18,11 +18,11 @@ async function GetWomenProducts(req, res) {
     console.log(para);
     // let items = await womenProducts.find({});
 
-    if(para == "All"){
+    if (para == "All") {
         items = await womenProducts.find({});
     }
-    else{
-        items = await womenProducts.find({Product_Type:para});
+    else {
+        items = await womenProducts.find({ Product_Type: para });
     }
     // const category = await womenCategories.findOne({ Categories: { $type: "array" } });
     // const Categories = category.Categories;
@@ -40,7 +40,7 @@ async function GetMenProducts(req, res) {
     res.render("shop", {
         data: items,
         Categories,
-        path:req.path
+        path: req.path
     })
 }
 

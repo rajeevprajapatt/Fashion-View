@@ -457,10 +457,12 @@ footer .footer .footer-div:nth-child(4) p {
   margin: 2rem 18% 0 18%;
   overflow: hidden;
 }
-.AllCategories a div {
+.AllCategories div {
   font-family: var(--heading-font);
   font-size: 1.6rem;
   padding: 0.5rem;
+  color: #000;
+  cursor: pointer;
 }
 
 .clicked {
@@ -471,12 +473,27 @@ footer .footer .footer-div:nth-child(4) p {
   border-bottom: 2px solid black;
 }
 
+.headingImg{
+  width: 100%;
+  overflow: hidden;
+  margin-top: 5rem;
+}
+.headingImg img{
+  width: 100%;
+}
+
 .products {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
   gap: 3rem;
   margin: 3% 10%;
+  display: none;
+}
+
+
+.show{
+  display: grid;
 }
 .products .product-divs {
   border: 1px solid rgb(196, 191, 191);
@@ -517,6 +534,11 @@ footer .footer .footer-div:nth-child(4) p {
     grid-template-columns: repeat(3, 1fr);
     margin: 3% 5%;
     gap: 2rem;
+  }
+  .headingImg{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 8rem;
   }
 }
 

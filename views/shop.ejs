@@ -16,7 +16,6 @@
 </head>
 
 <body>
-
     <!-- HEADER SECTION  -->
     <header class="header">
         <div class="header-1">
@@ -29,7 +28,7 @@
                 <div id="search-btn" class="fas fa-search"></div>
                 <a href="#" class="fas fa-heart"></a>
                 <a href="#" class="fas fa-shopping-cart"></a>
-                <div id="login-btn" class="fas fa-user"></div>
+                <a href="/user/login" class="fas fa-user"></a>
             </div>
         </div>
     </header>
@@ -42,11 +41,11 @@
     <div class="AllCategories">
         <% if (locals.Categories || locals.path) { %>
             <% Categories.forEach(element=> { %>
-                <a href="<%= path %>/<%= element %>">
-                    <div>
-                        <%= element %>
-                    </div>
-                </a>
+                <!-- <a href="<%= path %>/<%= element %>"> -->
+                <div>
+                    <%= element %>
+                </div>
+                <!-- </a> -->
                 <% }) %>
                     <% } %>
     </div>
@@ -58,7 +57,7 @@
                 <% } %>
                     <% data.forEach(item=> { %>
                         <div class="product-divs">
-                            <img src="/<%= item.Product_ImgPaths[1] %>" alt="">
+                            <img src="/<%= item.Product_ImgPaths[0] %>" alt="">
                             <p>
                                 <%= item.Product_Name %>
                             </p>
@@ -75,6 +74,33 @@
                         <% }) %>
                             <% } %>
     </section>
+
+    <% if (locals.Categories || locals.data) { %>
+        <% for( let index = 1; index < Categories.length; index++ ) { %>
+            <section class="products">
+                <% data.forEach(item => { %>
+                    <% if (item.Product_Type==Categories[index] ) { %>
+                        <div class="product-divs">
+                            <img src="/<%= item.Product_ImgPaths[0] %>" alt="">
+                            <p>
+                                <%= item.Product_Name %>
+                            </p>
+                            <p>
+                                <%= item.Product_Size_Type %>
+                            </p>
+                            <p>&#x20b9 <%= item.Product_Price %>
+                                    <span
+                                        style="text-decoration: line-through;font-size: 1rem; padding: 1rem .8rem; color: grey;">
+                                        <%= item.Product_CutPrice %>
+                                    </span>
+                            </p>
+                        </div>
+                        <% } %>
+                <% }) %>
+            </section>
+        <% } %>
+    <% } %>
+
 
     <!-- HOMEGROWN SECTION  -->
     <section class="Homegrown">
@@ -153,7 +179,7 @@
         <p>&copy; 2023 Developed By Rajeev Prajapat</p>
     </div>
     <!-- COPYRIGHT SECTION ENDS  -->
-     <script src="/js/shop.js"></script>
+    <script src="/js/shop.js"></script>
 </body>
 
 </html>
