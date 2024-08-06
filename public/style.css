@@ -262,7 +262,7 @@ marquee {
 }
 
 .arrivals > .container {
-  margin: 0 15%;
+  margin: 0 10%;
 }
 
 .arrivals-div {
@@ -270,7 +270,7 @@ marquee {
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   cursor: pointer;
 }
 
@@ -304,7 +304,7 @@ marquee {
 }
 
 .newsletter {
-  background: url("/images/HOME-2.jpg") no-repeat;
+  background: url("/images/pexels-pixabay-413885.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -320,7 +320,7 @@ marquee {
 
 .newsletter form h3 {
   font-size: 2.2rem;
-  color: #fff;
+  color: #000000;
   padding-bottom: 0.7rem;
   font-weight: normal;
 }
@@ -340,6 +340,15 @@ marquee {
   font-size: 2rem;
   padding: 0.8rem 2rem;
   border-radius: 0.5rem;
+  background-color: var(--heading-color);
+  color: white;
+  cursor: pointer;
+  transition: .5s ease-in-out;
+}
+
+.btn:hover{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 25px;
+  
 }
 
 .Homegrown {
@@ -368,7 +377,8 @@ marquee {
   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 .Homegrown .container div:nth-child(1) {
-  background-color: #667eea;
+  background-color: var(--heading-color);
+  color: white;
 }
 .Homegrown div:nth-child(1) h5 {
   animation: typingForward 4s forwards 1;
@@ -464,16 +474,19 @@ footer .footer .footer-div:nth-child(4) p {
   font-family: var(--heading-font);
   font-size: 1.6rem;
   padding: 0.5rem;
-  color: #000;
+  /* color: #000; */
   cursor: pointer;
+  border: 1px solid var(--heading-color);
+  border-radius: .2rem;
 }
 
 .clicked {
-  border-bottom: 2px solid red;
+  background-color: var(--heading-color);
+  color: white;
 }
 
 .active-bar {
-  border-bottom: 2px solid black;
+  border: 2px solid black;
 }
 
 .headingImg{
@@ -542,6 +555,22 @@ footer .footer .footer-div:nth-child(4) p {
     width: 100%;
     overflow: hidden;
     margin-top: 8rem;
+  }
+  @keyframes typingForward {
+    from {
+      width: 50%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  @keyframes typingBackward {
+    from {
+      width: 170%;
+    }
+    to {
+      width: 100%;
+    }
   }
 }
 
@@ -626,6 +655,23 @@ footer .footer .footer-div:nth-child(4) p {
     font-family: var(--heading-font);
     font-size: 1.3rem;
     padding: 0.5rem;
+  }
+
+  @keyframes typingForward {
+    from {
+      width: 88%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  @keyframes typingBackward {
+    from {
+      width: 170%;
+    }
+    to {
+      width: 100%;
+    }
   }
 }
 
