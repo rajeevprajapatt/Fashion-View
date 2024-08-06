@@ -19,6 +19,3 @@ allLinks.forEach((element,index)=>{
         currentDiv.classList.add('show');
     })
 })
-
-console.log(allLinks);
-console.log(productsDiv);

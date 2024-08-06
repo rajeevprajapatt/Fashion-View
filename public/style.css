@@ -5,8 +5,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Playwrite+AT:ital,wght@0,100..400;1,100..400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 /* @import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Signika+Negative:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Signika+Negative:wght@300..700&display=swap");
 :root {
   /* --main-color: #ede8f5; */
   --snd-color: #f0f3f2;
@@ -15,8 +15,9 @@
   --box-shadow: 0 0.5rem 1rem #0000001a;
   --basic-font: "Nunito", sans-serif;
   --black: #000000;
-  --text-color: rgb(59, 58, 58);
+  --text-color: rgb(0, 0, 0);
   --normal-border: 1px solid var(--text-color);
+  
 }
 
 * {
@@ -27,7 +28,6 @@
   outline: none;
   border: none;
   text-decoration: none;
-  text-transform: capitalize;
   transition: width none;
 }
 
@@ -227,7 +227,7 @@ span {
 }
 
 .women-class {
-  left: 60%;
+  left: 13%;
   top: 20%;
 }
 .men-class {
@@ -238,12 +238,14 @@ span {
 .categories-divs .img-text h3 {
   font-family: var(--heading-font);
   font-weight: 500;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
+  color: black;
 }
 
 .categories-divs .img-text p {
   font-family: var(--basic-font);
   font-size: 1.3rem;
+  color: black;
 }
 
 marquee {
@@ -258,7 +260,6 @@ marquee {
 
 .arrivals {
   text-align: center;
-  /* padding: 20px; */
 }
 
 .arrivals > .container {
@@ -343,12 +344,11 @@ marquee {
   background-color: var(--heading-color);
   color: white;
   cursor: pointer;
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
-.btn:hover{
+.btn:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 25px;
-  
 }
 
 .Homegrown {
@@ -477,7 +477,7 @@ footer .footer .footer-div:nth-child(4) p {
   /* color: #000; */
   cursor: pointer;
   border: 1px solid var(--heading-color);
-  border-radius: .2rem;
+  border-radius: 0.2rem;
 }
 
 .clicked {
@@ -489,12 +489,12 @@ footer .footer .footer-div:nth-child(4) p {
   border: 2px solid black;
 }
 
-.headingImg{
+.headingImg {
   width: 100%;
   overflow: hidden;
   margin-top: 5rem;
 }
-.headingImg img{
+.headingImg img {
   width: 100%;
 }
 
@@ -508,13 +508,13 @@ footer .footer .footer-div:nth-child(4) p {
 }
 
 
-.show{
+.show {
   display: grid;
 }
 .products .product-divs {
   border: 1px solid rgb(196, 191, 191);
   overflow: hidden;
-  transition: 0.5s ease;
+  transition: 0.2s ease;
   cursor: pointer;
 }
 .products .product-divs:hover {
@@ -529,9 +529,89 @@ footer .footer .footer-div:nth-child(4) p {
 }
 
 .products .product-divs img {
+  transition: .5s;
   width: 100%;
   border-bottom: 1px solid rgb(196, 191, 191);
 }
+
+/* SIGN UP PAGE CSS  */
+.signup-container {
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+}
+
+.signup-container h2 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  font-size: 3rem;
+  font-family: var(--heading-font);
+  color: var(--heading-color);
+}
+
+.signup-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-container label {
+  margin-bottom: 0.5rem;
+  text-align: left;
+  font-size: 1.8rem;
+  font-weight: 500;
+  font-family: var(--basic-font);
+  color: var(--text-color);
+}
+
+.signup-container input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.signup-container button {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--heading-color);
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.signup-container button:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 25px;
+}
+.forgot-password{
+  font-size: 1.2rem;
+  text-align: end;
+  padding-bottom: .5rem;
+  color: var(--text-color);
+  font-family: var(--basic-font);
+  font-weight: 600;
+  text-decoration: underline;
+}
+.signup-container .signup-link{
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  transition: 1s;
+  font-family: var(--basic-font);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.signup-container p{
+  font-size: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+  transition: 1s;
+}
+
 
 /* media query */
 @media (max-width: 991px) {
@@ -551,7 +631,7 @@ footer .footer .footer-div:nth-child(4) p {
     margin: 3% 5%;
     gap: 2rem;
   }
-  .headingImg{
+  .headingImg {
     width: 100%;
     overflow: hidden;
     margin-top: 8rem;
@@ -691,7 +771,7 @@ footer .footer .footer-div:nth-child(4) p {
     gap: 1rem;
   }
   .AllCategories {
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.3rem;
   }
 }
