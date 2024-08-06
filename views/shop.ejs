@@ -2,18 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop View</title>
-    <link rel="stylesheet" href="/style.css">
-
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="/images/cropped_image.png" type="image/x-icon">
-
-    <!-- link font awesom cdn  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <%- include('./partials/head') %>
+        <title>Shop View</title>
 </head>
 
 <body>
@@ -42,11 +32,9 @@
     <div class="AllCategories">
         <% if (locals.Categories || locals.path) { %>
             <% Categories.forEach(element=> { %>
-                <!-- <a href="<%= path %>/<%= element %>"> -->
                 <div>
                     <%= element %>
                 </div>
-                <!-- </a> -->
                 <% }) %>
                     <% } %>
     </div>
@@ -58,7 +46,8 @@
                 <% } %>
                     <% data.forEach(item=> { %>
                         <div class="product-divs">
-                            <img src="/<%= item.Product_ImgPaths[0] %>" alt="">
+                            <div class="imgDiv"> <img src="/<%= item.Product_ImgPaths[0] %>" alt="">
+                            </div>
                             <p>
                                 <%= item.Product_Name %>
                             </p>
@@ -77,9 +66,9 @@
     </section>
 
     <% if (locals.Categories || locals.data) { %>
-        <% for( let index = 1; index < Categories.length; index++ ) { %>
+        <% for( let index=1; index < Categories.length; index++ ) { %>
             <section class="products">
-                <% data.forEach(item => { %>
+                <% data.forEach(item=> { %>
                     <% if (item.Product_Type==Categories[index] ) { %>
                         <div class="product-divs">
                             <img src="/<%= item.Product_ImgPaths[0] %>" alt="">
@@ -97,90 +86,90 @@
                             </p>
                         </div>
                         <% } %>
-                <% }) %>
+                            <% }) %>
             </section>
-        <% } %>
-    <% } %>
+            <% } %>
+                <% } %>
 
 
-    <!-- HOMEGROWN SECTION  -->
-    <section class="Homegrown">
-        <div class="container">
-            <div>
-                <h5>HOMEGROWN INDIAN BRAND</h5>
-            </div>
-            <div>
-                <h5>OVER 100K HAPPY CUSTOMERS</h5>
-            </div>
-        </div>
-    </section>
-    <!-- HOMEGROWN SECTION ENDS  -->
+                    <!-- HOMEGROWN SECTION  -->
+                    <section class="Homegrown">
+                        <div class="container">
+                            <div>
+                                <h5>HOMEGROWN INDIAN BRAND</h5>
+                            </div>
+                            <div>
+                                <h5>OVER 100K HAPPY CUSTOMERS</h5>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- HOMEGROWN SECTION ENDS  -->
 
-    <!-- FOOTER SECTION  -->
-    <footer>
-        <div class="footer">
-            <div class="footer-div">
-                <h4>Contact</h4>
-                <p><strong>Address:</strong> 30, Vaishnav Vihar, Jhotwara, Jaipur</p>
-                <p><strong>Phone:</strong> +916378952948</p>
-                <p><strong>Hours:</strong> 24*7</p>
-                <h4>Follow Us</h4>
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            </div>
-            <div class="footer-div links">
-                <h4>About</h4>
-                <a href="#">
-                    About us
-                </a>
-                <a href="#">
-                    Delivery Information
-                </a>
-                <a href="#">
-                    Privacy Policy
-                </a>
-                <a href="#">
-                    Terms & Condition
-                </a>
-                <a href="#">
-                    Contact Us
-                </a>
-            </div>
-            <div class="footer-div links">
-                <h4>My Account</h4>
-                <a href="#">
-                    Sign in
-                </a>
-                <a href="#">
-                    View Cart
-                </a>
-                <a href="#">
-                    My Wishlist
-                </a>
-                <a href="#">
-                    Track My Order
-                </a>
-                <a href="#">
-                    Help
-                </a>
-            </div>
-            <div class="footer-div">
-                <p>Secure Payment With </p>
-                <img src="/images/1-removebg-preview.png">
-                <p>Shipping Partners </p>
-                <img src="/images/2-removebg-preview.png">
-            </div>
-        </div>
-    </footer>
-    <!-- FOOTER SECTION ENDS  -->
+                    <!-- FOOTER SECTION  -->
+                    <footer>
+                        <div class="footer">
+                            <div class="footer-div">
+                                <h4>Contact</h4>
+                                <p><strong>Address:</strong> 30, Vaishnav Vihar, Jhotwara, Jaipur</p>
+                                <p><strong>Phone:</strong> +916378952948</p>
+                                <p><strong>Hours:</strong> 24*7</p>
+                                <h4>Follow Us</h4>
+                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                            </div>
+                            <div class="footer-div links">
+                                <h4>About</h4>
+                                <a href="#">
+                                    About us
+                                </a>
+                                <a href="#">
+                                    Delivery Information
+                                </a>
+                                <a href="#">
+                                    Privacy Policy
+                                </a>
+                                <a href="#">
+                                    Terms & Condition
+                                </a>
+                                <a href="#">
+                                    Contact Us
+                                </a>
+                            </div>
+                            <div class="footer-div links">
+                                <h4>My Account</h4>
+                                <a href="#">
+                                    Sign in
+                                </a>
+                                <a href="#">
+                                    View Cart
+                                </a>
+                                <a href="#">
+                                    My Wishlist
+                                </a>
+                                <a href="#">
+                                    Track My Order
+                                </a>
+                                <a href="#">
+                                    Help
+                                </a>
+                            </div>
+                            <div class="footer-div">
+                                <p>Secure Payment With </p>
+                                <img src="/images/1-removebg-preview.png">
+                                <p>Shipping Partners </p>
+                                <img src="/images/2-removebg-preview.png">
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- FOOTER SECTION ENDS  -->
 
-    <!-- COPYRIGHT SECTION  -->
-    <div class="copyright">
-        <p>&copy; 2023 Developed By Rajeev Prajapat</p>
-    </div>
-    <!-- COPYRIGHT SECTION ENDS  -->
-    <script src="/js/shop.js"></script>
+                    <!-- COPYRIGHT SECTION  -->
+                    <div class="copyright">
+                        <p>&copy; 2023 Developed By Rajeev Prajapat</p>
+                    </div>
+                    <!-- COPYRIGHT SECTION ENDS  -->
+                    <script src="/js/shop.js"></script>
 </body>
 
 </html>
