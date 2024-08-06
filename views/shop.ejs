@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
+    <title>Shop View</title>
     <link rel="stylesheet" href="/style.css">
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="/images/cropped_image.png" type="image/x-icon">
 
     <!-- link font awesom cdn  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -19,7 +20,7 @@
     <!-- HEADER SECTION  -->
     <header class="header">
         <div class="header-1">
-            <a href="#" class="logo">Fashion View </a>
+            <a href="#" class="logo"><i class="fa-brands fa-foursquare fa-beat"></i>ashi&#xf8;&#x014B; View</a>
             <form action="" class="search-form">
                 <input type="search" name="" placeholder="Search here....." id="search-box">
                 <label form="search-box" class="fas fa-search"></label>
@@ -64,7 +65,7 @@
                             <p>
                                 <%= item.Product_Size_Type %>
                             </p>
-                            <p>&#x20b9 <%= item.Product_Price %>
+                            <p>&#x20b9; <%= item.Product_Price %>
                                     <span
                                         style="text-decoration: line-through;font-size: 1rem; padding: 1rem .8rem; color: grey;">
                                         <%= item.Product_CutPrice %>
