@@ -2,7 +2,7 @@ const express = require("express");
 const { User } = require("../models/user");
 const { menProducts, womenProducts, } = require("../models/productSchema");
 const { checkUserLogged } = require("../middlewares/auth");
-const { GetWomenProducts, GetMenProducts, ItemInsertion, AllWomenProducts } = require("../controllers/products");
+const { GetWomenProducts, AllMenProducts, ItemInsertion, AllWomenProducts } = require("../controllers/products");
 const { HomeActivities } = require("../controllers/mainrouter");
 const multer = require("multer");
 const router = express.Router();
@@ -34,9 +34,8 @@ router.get("/ItemsInsertion", (req, res) => {
 
 router.post("/Insert", img.array('imgPath', 4), ItemInsertion);
 
-// router.get("/Shop/Women", AllWomenProducts);
 router.get("/Shop/Women", AllWomenProducts);
-router.get("/Shop/Men", GetMenProducts);
+router.get("/Shop/Men", AllMenProducts);
 
 // router.get("/Shop/Women/:para",(req,res)=>{
 //     const para = req.params.para;
