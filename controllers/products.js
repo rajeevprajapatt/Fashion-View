@@ -33,7 +33,7 @@ async function GetWomenProducts(req, res) {
     })
 }
 
-async function GetMenProducts(req, res) {
+async function AllMenProducts(req, res) {
     const items = await menProducts.find({});
     const category = await menCategories.findOne({ Categories: { $type: "array" } });
     const Categories = category.Categories;
@@ -87,7 +87,7 @@ async function ItemInsertion(req, res) {
 }
 module.exports = {
     GetWomenProducts,
-    GetMenProducts,
+    AllMenProducts,
     ItemInsertion,
     AllWomenProducts
 }
