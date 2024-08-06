@@ -1,10 +1,7 @@
 const { v4: uuidv4 } = require("uuid");
 const { User } = require("../models/user");
 const express = require("express");
-const {
-    setUser,
-    getUser
-} = require("../services/auth");
+const { setUser, getUser } = require("../services/auth");
 
 const multer = require("multer");
 // const {upload} = require("../routes/user")
@@ -25,6 +22,10 @@ async function handleUserSignUp(req, res) {
             password: body.password,
             path: body.file
         });
+
+        const user = await User.findOne({ email: body.email });
+        const token = setUser(user);
+        res.cookie("uid", token);
         return res.redirect("/");
     }
     else {
@@ -33,6 +34,7 @@ async function handleUserSignUp(req, res) {
         })
     }
 }
+
 async function handleUserLogin(req, res) {
     const { email, password } = req.body;
 
@@ -40,17 +42,10 @@ async function handleUserLogin(req, res) {
     if (!user) return res.status(400).render("login", {
         msg: "Invalid username or password",
     });
-
-    console.log(user);
-
     // const sessionId = uuidv4();
     const token = setUser(user);
     res.cookie("uid", token);
-
     // console.log(sessionIds);
-
-
-
     return res.redirect("/");
 }
 
