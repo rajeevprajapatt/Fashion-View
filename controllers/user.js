@@ -1,5 +1,5 @@
 const { v4: uuidv4 } = require("uuid");
-const { User, Products } = require("../models/user");
+const { User } = require("../models/user");
 const express = require("express");
 const { setUser, getUser } = require("../services/auth");
 const multer = require("multer");
