@@ -1,6 +1,11 @@
 const express = require("express");
 const Url = require("url");
-const { womenProducts, menProducts, womenCategories, menCategories } = require("../models/productSchema");
+const {
+    womenProducts,
+    menProducts,
+    womenCategories,
+    menCategories
+} = require("../models/productSchema");
 
 async function AllWomenProducts(req, res) {
     const items = await womenProducts.find({});
