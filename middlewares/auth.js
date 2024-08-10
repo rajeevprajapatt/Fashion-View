@@ -6,21 +6,17 @@ const checkUserLogged = async (req, res, next) => {
     const userUid = req.cookies?.uid;
 
     if (!userUid) return res.render('login');
-    const user = getUser(userUid);
 
+    const user = getUser(userUid);
     if (!user) {
         return res.redirect("/");
     }
-
     else {
         res.redirect("/shop");
     }
-
     req.user = user;
 
-    console.log(userUid);
     next();
-
 }
 
 module.exports = {

@@ -120,6 +120,7 @@
     </div>
     <!-- ADVERTISEMENT SECTION ENDS  -->
 
+    <!-- ARRIVALS SECTION STARTS  -->
     <div class="splide">
         <h1 class="heading">NEW ARRIVALS</h1>
         <div class="splide__track">
@@ -157,32 +158,7 @@
             </div>
         </div>
     </div>
-
-    <!-- ARRIVALS SECTION  -->
-    <!-- <section class="arrivals">
-        <h1 class="heading">NEW ARRIVALS</h1>
-        <div class="container">
-            <div class="arrivals-div">
-                <div class="arrival">
-                    <img src="/images/women_cargo01.webp" alt="Top-Notch Tops">
-                    <p>Top-Notch Tops</p>
-                </div>
-                <div class="arrival">
-                    <img src="/images/women_dresses1.webp" alt="Dreamy Dresses">
-                    <p>Dreamy Dresses</p>
-                </div>
-                <div class="arrival">
-                    <img src="/images/co-ord set2.webp" alt="Chic Jumpsuits">
-                    <p>Chic Jumpsuits</p>
-                </div>
-                <div class="arrival">
-                    <img src="/images/women cargo2.webp" alt="Chic Jumpsuits">
-                    <p>Chic Jumpsuits</p>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- ARRIVALS SECTION ENDS  -->
+    <!-- ARRIVALS SECTION END  -->
 
     <!-- NEWSLETTER SECTION  -->
     <h1 class="heading" style="margin-top: 3rem; margin-bottom: 0rem;">SUBSCRIBE FOR LATEST UPDATES</h1>
@@ -276,33 +252,8 @@
     <!-- COPYRIGHT SECTION ENDS  -->
 
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-    <script>
-
-        var splide = new Splide('.splide', {
-            perPage: 4,
-            gap: '3rem',
-            perMove: 1,
-            padding: '5rem',
-            type: 'loop',
-            breakpoints: {
-                640: {
-                    perPage: 2,
-                    gap: '.7rem',
-                    // height: '6rem',
-                },
-                480: {
-                    perPage: 1,
-                    gap: '.7rem',
-                    // height: '6rem',
-                },
-            },
-        });
-
-        splide.mount();
-
-
-
-    </script>
+    <script src="/js/splide.js"></script>
+    
     <!-- custom Javascript file link -->
     <%- include('./partials/script.js') %>
 </body>
