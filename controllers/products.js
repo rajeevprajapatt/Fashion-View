@@ -8,35 +8,19 @@ const {
 } = require("../models/productSchema");
 
 async function AllWomenProducts(req, res) {
-    const items = await womenProducts.find({});
-    const category = await womenCategories.findOne({ Categories: { $type: "array" } });
-    const Categories = category.Categories;
-    res.render("shop", {
-        data: items,
-        Categories,
-        path: req.path
-    })
-}
-
-async function GetWomenProducts(req, res) {
-    const para = req.params.category;
-    console.log(para);
-    // let items = await womenProducts.find({});
-
-    if (para == "All") {
-        items = await womenProducts.find({});
+    try {
+        const items = await womenProducts.find({});
+        const category = await womenCategories.findOne({ Categories: { $type: "array" } });
+        const Categories = category.Categories;
+        res.render("shop", {
+            data: items,
+            Categories,
+            path: req.path
+        });
+    } catch (error) {
+        console.log(error);
     }
-    else {
-        items = await womenProducts.find({ Product_Type: para });
-    }
-    // const category = await womenCategories.findOne({ Categories: { $type: "array" } });
-    // const Categories = category.Categories;
-    res.render("shop", {
-        data: items,
-        // Categories,
-        // path:req.path
-    })
-}
+};
 
 async function AllMenProducts(req, res) {
     const items = await menProducts.find({});
@@ -46,8 +30,8 @@ async function AllMenProducts(req, res) {
         data: items,
         Categories,
         path: req.path
-    })
-}
+    });
+};
 
 async function ItemInsertion(req, res) {
     const body = req.body;
@@ -91,7 +75,6 @@ async function ItemInsertion(req, res) {
     res.redirect("/ItemsInsertion");
 }
 module.exports = {
-    GetWomenProducts,
     AllMenProducts,
     ItemInsertion,
     AllWomenProducts
