@@ -120,8 +120,46 @@
     </div>
     <!-- ADVERTISEMENT SECTION ENDS  -->
 
+    <div class="splide">
+        <h1 class="heading">NEW ARRIVALS</h1>
+        <div class="splide__track">
+            <div class="splide__list">
+                <div class="splide__slide">
+                    <div class="img_box">
+                        <img src="/images/women_cargo01.webp" alt="">
+                    </div>
+                    <p>Top-Notch Tops</p>
+                </div>
+                <div class="splide__slide">
+                    <div class="img_box">
+                        <img src="/images/women_dresses1.webp" alt="">
+                    </div>
+                    <p>Top-Notch Tops</p>
+                </div>
+                <div class="splide__slide">
+                    <div class="img_box">
+                        <img src="/images/co-ord set2.webp" alt="">
+                    </div>
+                    <p>Top-Notch Tops</p>
+                </div>
+                <div class="splide__slide">
+                    <div class="img_box">
+                        <img src="/images/women cargo2.webp" alt="">
+                    </div>
+                    <p>Top-Notch Tops</p>
+                </div>
+                <div class="splide__slide">
+                    <div class="img_box">
+                        <img src="/images/women cargo1.webp" alt="">
+                    </div>
+                    <p>Top-Notch Tops</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- ARRIVALS SECTION  -->
-    <section class="arrivals">
+    <!-- <section class="arrivals">
         <h1 class="heading">NEW ARRIVALS</h1>
         <div class="container">
             <div class="arrivals-div">
@@ -143,7 +181,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- ARRIVALS SECTION ENDS  -->
 
     <!-- NEWSLETTER SECTION  -->
@@ -237,6 +275,34 @@
     </div>
     <!-- COPYRIGHT SECTION ENDS  -->
 
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+
+        var splide = new Splide('.splide', {
+            perPage: 4,
+            gap: '3rem',
+            perMove: 1,
+            padding: '5rem',
+            type: 'loop',
+            breakpoints: {
+                640: {
+                    perPage: 2,
+                    gap: '.7rem',
+                    // height: '6rem',
+                },
+                480: {
+                    perPage: 1,
+                    gap: '.7rem',
+                    // height: '6rem',
+                },
+            },
+        });
+
+        splide.mount();
+
+
+
+    </script>
     <!-- custom Javascript file link -->
     <%- include('./partials/script.js') %>
 </body>
