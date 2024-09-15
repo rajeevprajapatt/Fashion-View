@@ -544,6 +544,69 @@ footer .footer .footer-div:nth-child(4) p {
 }
 /* PRODUCTS SECTION CSS ENDS  */
 
+/* ITEMS PAGE CSS START  */
+
+.itemPreview{
+  margin-top: 5.4rem;
+  /* background-color: red; */
+  display: flex;
+  width: 100%;
+}
+.itemPreviewDiv1{
+  width: 60%;
+  /* background-color: aqua; */
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 1rem;
+  margin: 2% 2.5%;
+}
+.itemPreviewDiv2{
+  width: 40%;
+  /* background-color: rgb(38, 0, 255); */
+}
+.itemPreviewDiv2 h1{
+  font-size: 3rem;
+  font-family: var(--heading-font);
+  padding: 2.5rem 0 0 0;
+}
+.itemPreviewDiv2 h4{
+  font-size: 1.7rem;
+  font-family: var(--basic-font);
+  padding: 0 0 1rem 0;
+}
+.itemPreviewDiv2 p{
+  font-size: 2rem;
+  font-family: var(--basic-font);
+  padding: 1rem 0;
+}
+.itemPreviewDiv2 h3{
+  font-size: 2rem;
+  font-family: var(--basic-font);
+  padding: .5rem 0;
+}
+.itemPreviewDiv2 h3 span{
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-decoration: line-through;
+}
+.itemPreviewDiv2 button{
+  font-size: 1.5rem;
+  padding: 1rem 2.2rem;
+  margin-right: 1rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  background: none;
+  border: 1px solid grey;
+}
+.line{
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+  margin: 1rem 0;
+}
+
+/* ITEMS PAGE CSS ENDS  */
+
 /* ------------------------------------------ */
 
 /* SIGN UP PAGE CSS  */
