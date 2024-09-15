@@ -74,8 +74,24 @@ async function ItemInsertion(req, res) {
     }
     res.redirect("/ItemsInsertion");
 }
+
+async function GetItem(req, res){
+    // const para = decodeURIComponent(req.body.params);
+    const itemName = req.params.itemName;
+    let itemDetails = await womenProducts.findOne({Product_Name:itemName});
+    if(!itemDetails){
+        itemDetails = await menProducts.findOne({Product_Name:itemName});
+    }
+    console.log(itemName);
+    console.log(itemDetails);
+    res.render('item',{
+        item:itemDetails,
+    });             
+}
+
 module.exports = {
     AllMenProducts,
     ItemInsertion,
-    AllWomenProducts
+    AllWomenProducts,
+    GetItem
 }
