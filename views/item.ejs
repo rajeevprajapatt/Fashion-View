@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
+    <title>Fashion View Shop</title>
     <%- include('./partials/head') %>
-        <title>Fashion View Shop</title>
 </head>
 
 <body>
@@ -25,68 +25,28 @@
     </header>
     <!-- HEADER SECTION ENDS  -->
 
-    <!-- HEADING IMAGE SECTION  -->
-    <div class="headingImg">
-        <img src="/images/catban-120230729114515.webp" alt="">
-    </div>
-    <!-- HEADING IMAGE SECTION ENDS -->
-
-    <!-- CATEGORY BAR STARTS  -->
-    <div class="AllCategories">
-        <% if (locals.Categories || locals.path) { %>
-            <% Categories.forEach(element=> { %>
-                <div>
-                    <%= element %>
-                </div>
-            <% }) %>
-        <% } %>
-    </div>
-    <!-- CATEGORY BAR ENDS  -->
-
-    <!-- PRODUCTS SECTION STARTS -->
-    <section class="products">
-        <% if (locals.data) { %>
-            <% if (data.length==0) { %>
-                <p>Add some items</p>
-            <% } %>
-            <% data.forEach(item=> { %>
-                <a href="/Shop/item/<%= item.Product_Name %>"><div class="product-divs">
-                    <div class="imgDiv"> <img src="/<%= item.Product_ImgPaths[0] %>" alt=""></div>
-                    <p><%= item.Product_Name %></p>
-                    <p><%= item.Product_Size_Type %></p>
-                    <p>&#x20b9; <%= item.Product_Price %>
-                        <span
-                            style="text-decoration: line-through;font-size: 1rem; padding: 1rem .8rem; color: grey;">
-                            <%= item.Product_CutPrice %>
-                        </span>
-                    </p>
-                </div></a>
-            <% }) %>
-        <% } %>
-    </section>
-
-    <% if (locals.Categories || locals.data) { %>
-        <% for( let index=1; index < Categories.length; index++ ) { %>
-            <section class="products">
-                <% data.forEach(item=> { %>
-                    <% if (item.Product_Type==Categories[index] ) { %>
-                        <a href="/Shop/item/<%= item.Product_Name %>"><div class="product-divs">
-                            <img src="/<%= item.Product_ImgPaths[0] %>" alt="">
-                            <p><%= item.Product_Name %></p>
-                            <p><%= item.Product_Size_Type %></p>
-                            <p>&#x20b9 <%= item.Product_Price %>
-                                <span
-                                    style="text-decoration: line-through;font-size: 1rem; padding: 1rem .8rem; color: grey;">
-                                    <%= item.Product_CutPrice %>
-                                </span>
-                            </p>
-                        </div></a>
-                    <% } %>
+    <section class="itemPreview">
+        <% if (locals.item) { %>
+            <div class="itemPreviewDiv1">
+                <% item.Product_ImgPaths.forEach(paths => { %>
+                 <div>
+                    <img src="/<%= paths %>" alt="" width="100%">
+                 </div>
                 <% }) %>
-            </section>
-        <% } %>
-    <% } %>
-    <!-- PRODUCTS SECTION ENDS -->
+            </div>
+            <div class="itemPreviewDiv2">
+                <h1><%= item.Product_Name %></h1>
+                <h4><%= item.Product_Size_Type %></h4>
+                <div class="line"></div>
+                <h3>Price: <%= item.Product_Price %> <span><%= item.Product_CutPrice %></span></h3>
+                <p>Please select a size:</p>
+                <% item.Product_Sizes.forEach(element => { %>
+                 <button><%= element %></button>
+                <% }) %>
+
+            </div>
+            <% } %>
+    </section>
 
     <!-- HOMEGROWN SECTION  -->
     <section class="Homegrown">
@@ -166,9 +126,9 @@
     </div>
     <!-- COPYRIGHT SECTION ENDS  -->
 
-    <script src="/js/shop.js"></script>
-
     <%- include('./partials/script.js') %>
+
+
 </body>
 
 </html>
