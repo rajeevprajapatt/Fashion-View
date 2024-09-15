@@ -1,6 +1,6 @@
 const express = require("express");
 const { checkUserLogged } = require("../middlewares/auth");
-const { AllMenProducts, ItemInsertion, AllWomenProducts } = require("../controllers/products");
+const { AllMenProducts, ItemInsertion, AllWomenProducts, GetItem } = require("../controllers/products");
 const { HomeActivities } = require("../controllers/mainrouter");
 const multer = require("multer");
 const router = express.Router();
@@ -33,6 +33,7 @@ router.get("/ItemsInsertion", (req, res) => {
 
 router.get("/Shop/Women", AllWomenProducts);
 router.get("/Shop/Men", AllMenProducts);
+router.get("/Shop/item/:itemName", GetItem )
 
 router.post("/Insert", img.array('imgPath', 4), ItemInsertion);
 
