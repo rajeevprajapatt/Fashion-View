@@ -1,26 +1,22 @@
-searchForm = document.querySelector('.search-form');
+const searchForm = document.querySelector('.search-form');
+const searchBtn = document.querySelector('#search-btn');
 
-document.querySelector('#search-btn').onclick = () => {
+searchBtn.onclick = () => {
     searchForm.classList.toggle('active');
 }
 
 let slideIndex = 0;
+const slides = document.querySelectorAll(".mySlides");
+const dots = document.querySelectorAll(".dot");
+const totalSlides = slides.length;
+
 let slideshow = () => {
-    let i;
-    let slides = document.querySelectorAll(".mySlides");
-    let dots = document.querySelectorAll(".dot");
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {
-        slideIndex = 1;
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" activate", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " activate";
+    slides.forEach(slide => slide.style.display = "none");
+    dots.forEach(dot => dot.classList.remove("activate"));
+
+    slideIndex = (slideIndex % totalSlides) + 1;
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].classList.add("activate");
     setTimeout(slideshow, 2000);
 }
 slideshow();

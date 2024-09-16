@@ -570,12 +570,12 @@ footer .footer .footer-div:nth-child(4) p {
   padding: 2.5rem 0 0 0;
 }
 .itemPreviewDiv2 h4{
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-family: var(--basic-font);
   padding: 0 0 1rem 0;
 }
 .itemPreviewDiv2 p{
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: var(--basic-font);
   padding: 1rem 0;
 }
@@ -593,7 +593,7 @@ footer .footer .footer-div:nth-child(4) p {
   font-size: 1.5rem;
   padding: 1rem 2.2rem;
   margin-right: 1rem;
-  border-radius: .5rem;
+  border-radius: 2rem;
   cursor: pointer;
   background: none;
   border: 1px solid grey;
