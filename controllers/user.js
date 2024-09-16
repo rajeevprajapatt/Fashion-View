@@ -1,52 +1,59 @@
-const { v4: uuidv4 } = require("uuid");
 const { User } = require("../models/user");
-const express = require("express");
 const { setUser, getUser } = require("../services/auth");
-
 const multer = require("multer");
-// const {upload} = require("../routes/user")
 
 async function handleUserSignUp(req, res) {
-    const body = req.body;
-    if (!body.name || !body.email || !body.password) {
+    const { name, email, password, file } = req.body;
+    if (!name || !email || !password) {
         return res.status(400).render("signup", {
             msg: "All Fields Required",
         });
     }
 
-    const Data = await User.findOne({ email: body.email });
-    if (Data === null) {
-        await User.create({
-            name: body.name,
-            email: body.email,
-            password: body.password,
-            path: body.file
+    try {
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
+            return res.status(400).render("signup", { msg: "Please try with a different email" });
+        }
+
+        const newUser = await User.create({
+            name,
+            email,
+            password,
+            path: file
         });
 
-        const user = await User.findOne({ email: body.email });
         const token = setUser(user);
         res.cookie("uid", token);
         return res.redirect("/");
-    }
-    else {
-        return res.render('signUp.ejs', {
-            msg: "Please Try with A different Email"
-        })
+
+    } catch (error) {
+        console.error("Error during user signup:", error);
+        return res.status(500).render("signup", { msg: "Error, please try again" });
     }
 }
 
 async function handleUserLogin(req, res) {
     const { email, password } = req.body;
 
-    const user = await User.findOne({ email, password });
-    if (!user) return res.status(400).render("login", {
-        msg: "Invalid username or password",
-    });
-    // const sessionId = uuidv4();
-    const token = setUser(user);
-    res.cookie("uid", token);
-    // console.log(sessionIds);
-    return res.redirect("/");
+    if (!email || !password) {
+        return res.status(400).render("login", { msg: "Please enter both email and password" });
+    }
+
+    try {
+        // find the user by mail
+        const user = await User.findOne({ email });
+        if (!user) return res.status(400).render("login", {
+            msg: "Invalid username or password",
+        });
+
+        const token = setUser(user);
+        res.cookie("uid", token);
+        return res.redirect("/");
+    } catch (error) {
+        console.error("Error during user login:", error);
+        return res.status(500).render("login", { msg: "Error, please try again" });
+    }
 }
 
 module.exports = {
