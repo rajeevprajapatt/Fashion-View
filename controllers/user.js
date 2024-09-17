@@ -23,7 +23,7 @@ async function handleUserSignUp(req, res) {
             path: file
         });
 
-        const token = setUser(user);
+        const token = setUser(newUser);
         res.cookie("uid", token);
         return res.redirect("/");
 
