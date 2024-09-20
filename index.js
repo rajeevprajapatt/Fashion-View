@@ -1,4 +1,5 @@
 const express = require('express');
+require("dotenv").config();
 const path = require('path');
 const PORT = process.env.PORT || 3000;
 
@@ -11,7 +12,7 @@ const userRoute = require("./routes/user");
 const { checkUserLogged } = require("./middlewares/auth");
 const cookieParser = require('cookie-parser');
 
-mongoConnect("mongodb://127.0.0.1:27017/FashionView").then(() => {
+mongoConnect(process.env.mongo_url).then(() => {
     console.log("MongoDB connected successfully");
 })
 
