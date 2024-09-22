@@ -9,19 +9,19 @@ const {
 
 async function getAllProducts(req, res, productCollection, productCategory) {
     try {
-        const [items, category] = await Promise.all([
+        const [items] = await Promise.all([
             productCollection.find({}),
-            productCategory.findOne({ Categories: { $type: "array" } })
+            // productCategory.findOne({ Categories: { $type: "array" } })
         ]);
 
-        if (!category || !items) {
-            return res.status(404).send("Categories or Products not found.");
-        }
+        // if (!category || !items) {
+        //     return res.status(404).send("Categories or Products not found.");
+        // }
 
-        const Categories = category.Categories;
+        // const Categories = category.Categories;
         res.render("shop", {
             data: items,
-            Categories,
+            // Categories,
             path: req.path
         });
     } catch (error) {
@@ -43,8 +43,8 @@ async function AllMenProducts(req, res) {
 async function ItemInsertion(req, res) {
     const body = req.body;
 
-    // let paths = [];
-    const paths = req.files.forEach(file => {
+    let paths = [];
+    req.files.forEach(file => {
         paths.push(`${file.destination.split("/").pop()}/${file.originalname}`);
     })
 

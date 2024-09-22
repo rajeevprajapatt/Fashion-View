@@ -1,15 +1,17 @@
 const express = require("express");
 const router = express.Router();
-const { menProducts, womenProducts } = require("../models/productSchema");
-
-async function HomeActivities(req,res){
-    const men = await menProducts.find({ Product_Category: "Men" });
-    const women = await womenProducts.find({ Product_Category: "Women" });
+const { womenCategories, menCategories, womenProducts, menProducts } = require("../models/productSchema");
+// menCategoriesModel
+async function HomeActivities(req, res) {
+    const men = await menProducts.find({});
+    const women = await womenProducts.find({});
+    console.log(men);
     return res.render('index', {
         totalMenItems: men.length,
         totalWomenItems: women.length
     });
 }
+
 
 module.exports = {
     HomeActivities,

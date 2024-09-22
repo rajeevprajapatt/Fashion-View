@@ -1,5 +1,11 @@
-const mongoose = require("mongoose");
-
+// const mongoose = require("mongoose");
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
+// const menCategories = new Schema({
+//     Categories: {
+//         type: Array,
+//     }
+// })
 const menCategorySchema = new mongoose.Schema({
     Categories: {
         type: Array,
@@ -79,5 +85,6 @@ const menProducts = mongoose.model("menProduct", menProductsSchema);
 
 const menCategories = mongoose.model("menCategories", menCategorySchema);
 const womenCategories = mongoose.model("womenCategories", womenCategorySchema);
-
-module.exports = { womenProducts, menProducts, menCategories, womenCategories };
+// const menCategoriesModel = mongoose.model('menCategories', menCategories);
+// menCategoriesModel,
+module.exports = {  womenCategories, menCategories, womenProducts, menProducts };
