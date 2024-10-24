@@ -38,39 +38,42 @@
                 <h1><%= item.Product_Name %></h1>
                 <h4><%= item.Product_Size_Type %></h4>
                 <div class="line"></div>
-                <h3>Price: <%= item.Product_Price %> <span><%= item.Product_CutPrice %></span></h3>
-                <p>Please select a size:</p>
+                <h3><%= item.Product_Price %> <span><%= item.Product_CutPrice %></span></h3>
+                <h5>Please select a size.</h5>
                 <% item.Product_Sizes.forEach(element => { %>
                  <button><%= element %></button>
                 <% }) %>
 
-                <p>Quantity <select name="quantity" id="" class="quantity">
-                    <option value="">1</option>
-                    <option value="">2</option>
-                    <option value="">3</option>
-                    <option value="">4</option>
-                    <option value="">5</option>
-                    <option value="">6</option>
-                    <option value="">7</option>
-                    <option value="">8</option>
-                    <option value="">9</option>
-                    <option value="">10</option>
-                </select> </p>
+                <h5>Quantity.  <select name="quantity" id="" class="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select> </h5>
 
                 <button class="cartBtn">ADD TO CART</button>
                 <button class="wishlistBtn">ADD TO WISHLIST</button>
 
-                <p>Share
+                <h5>Share
                 <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
                 <a href="#"><i class="fa-brands fa-facebook"></i></a>
                 <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a></p>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a></h5>
 
-                <p>Delivery Details</p>
+                <h5>Delivery Details</h5>
                 <form action="">
                     <input type="number" name="pincode" id="pincodeCheck" placeholder="Enter Pincode">
                     <label for="pincodeCheck">CHECK</label>
                 </form>
+
+                <h5>Product Description</h5>
+                <p class="desc"><%= item.Product_Description %></p>
                 
             </div>
             <% } %>

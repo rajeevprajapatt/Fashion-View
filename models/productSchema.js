@@ -12,7 +12,6 @@ const womenCategorySchema = new mongoose.Schema({
     }
 })
 
-
 const womenProductsSchema = new mongoose.Schema({
     Product_Name: {
         type: String,

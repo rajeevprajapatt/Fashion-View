@@ -4,7 +4,7 @@ const path = require('path');
 const PORT = process.env.PORT || 3000;
 const MONGO_URL = process.env.MONGO_URL || "mongodb://127.0.0.1:27017/FashionView";
 const uri = "mongodb+srv://rajeevprajapat06:Rajeev%4063789@Fashion-View.jr5jy.mongodb.net/FashionView?retryWrites=true&w=majority";
-
+const  status = require("express-status-monitor");
 const app = express();
 
 const { mongoConnect } = require('./connection');
@@ -17,6 +17,11 @@ const cookieParser = require('cookie-parser');
 mongoConnect(uri).then(() => {
   console.log("MongoDB connected successfully");
 })
+// mongoConnect(MONGO_URL).then(() => {
+//   console.log("MongoDB connected successfully");
+// })
+
+app.use(status());
 
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
