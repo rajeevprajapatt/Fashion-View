@@ -28,7 +28,7 @@ input[type="number"]::-webkit-inner-spin-button {
   outline: none;
   border: none;
   text-decoration: none;
-  transition: width none;
+  transition: none;
 }
 
 html {
@@ -132,7 +132,7 @@ span {
 .header .header-1 .icons div,
 .header .header-1 .icons a {
   font-size: 2.5rem;
-  margin-left: 1.5rem;
+  margin-left: 1.8rem;
   color: var(--text-color);
   cursor: pointer;
   transition: 0.4s;
@@ -482,16 +482,22 @@ footer .footer .footer-div:nth-child(4) p {
 }
 /* HEADING IMAGE CSS ENDS */
 
+.shopMainDiv {
+  width: 100%;
+  display: flex;
+}
+
 /* CATEGORY BAR CSS STARTS  */
 .AllCategories {
-  display: grid;
+  width: 15%;
+  /* display: grid;
   align-items: center;
   justify-content: center;
   text-align: center;
   grid-template-columns: repeat(6, 1fr);
   gap: 0.5rem;
   margin: 2rem 18% 0 18%;
-  overflow: hidden;
+  overflow: hidden; */
 }
 .AllCategories div {
   font-family: var(--heading-font);
@@ -514,6 +520,7 @@ footer .footer .footer-div:nth-child(4) p {
 
 /* PRODUCTS SECTION CSS STARTS  */
 .products {
+  width: 85%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
@@ -567,11 +574,11 @@ footer .footer .footer-div:nth-child(4) p {
   gap: 1rem;
   margin: 2% 2.5%;
 }
-.itemPreviewDiv1 img{
+.itemPreviewDiv1 img {
   cursor: pointer;
-  transition: .5s;
+  transition: 0.5s;
 }
-.itemPreviewDiv1 img:hover{
+.itemPreviewDiv1 img:hover {
   transform: scale(1.01);
 }
 .itemPreviewDiv2 {
@@ -621,6 +628,11 @@ footer .footer .footer-div:nth-child(4) p {
   border: 1px solid grey;
   margin-bottom: 2.5rem;
 }
+.itemPreviewDiv2 button.selected {
+  background-color: var(--heading-color);
+  color: white;
+  border-color: #333;
+}
 .line {
   width: 100%;
   height: 2px;
@@ -655,10 +667,10 @@ footer .footer .footer-div:nth-child(4) p {
   font-size: 1.8rem;
   padding: 0 0.5rem;
 }
-.itemPreviewDiv2 form {
+.itemPreviewDiv2 .pincodeCheckForm {
   border: 1px solid black;
   width: 70%;
-  font-size:1.5rem ;
+  font-size: 1.5rem;
   display: flex;
   justify-content: space-between;
   padding: 1rem 1rem;
@@ -666,11 +678,10 @@ footer .footer .footer-div:nth-child(4) p {
   border-radius: 0.3rem;
   margin-bottom: 3rem;
 }
-.itemPreviewDiv2 form input{
+.itemPreviewDiv2 form input {
   width: 100%;
   font-size: 1.6rem;
 }
-
 
 /* .itemPreviewDiv2 input{
   border: 1px solid black;

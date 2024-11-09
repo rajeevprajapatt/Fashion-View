@@ -7,168 +7,168 @@
 </head>
 
 <body>
-    <!-- HEADER SECTION  -->
-    <header class="header">
-        <div class="header-1">
-            <a href="#" class="logo"><i class="fa-brands fa-foursquare fa-beat"></i>ashi&#xf8;&#x014B; View</a>
-            <form action="" class="search-form">
-                <input type="search" name="" placeholder="Search here....." id="search-box">
-                <label form="search-box" class="fas fa-search"></label>
-            </form>
-            <div class="icons">
-                <div id="search-btn" class="fas fa-search"></div>
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-shopping-cart"></a>
-                <a href="/user/login" class="fas fa-user"></a>
-            </div>
+    <%- include('./partials/navbar') %>
+
+        <!-- HEADING IMAGE SECTION  -->
+        <div class="headingImg">
+            <img src="/images/catban-120230729114515.webp" alt="">
         </div>
-    </header>
-    <!-- HEADER SECTION ENDS  -->
+        <!-- HEADING IMAGE SECTION ENDS -->
+        <section class="shopMainDiv">
+            <!-- CATEGORY BAR STARTS  -->
+            <div class="AllCategories">
+                <% if (locals.Categories || locals.path) { %>
+                    <% Categories.forEach(element=> { %>
+                        <div>
+                            <%= element %>
+                        </div>
+                        <% }) %>
+                            <% } %>
+            </div>
+            <!-- CATEGORY BAR ENDS  -->
+            <div class="products">
+                <% if (locals.data) { %>
+                    <% if (data.length==0) { %>
+                        <p>Add some items</p>
+                        <% } %>
+                            <% data.forEach(item=> { %>
+                                <a href="/Shop/item/<%= item.Product_Name %>">
+                                    <div class="product-divs">
+                                        <div class="imgDiv"> <img src="/<%= item.Product_ImgPaths[0] %>" alt=""></div>
+                                        <p>
+                                            <%= item.Product_Name %>
+                                        </p>
+                                        <p>
+                                            <%= item.Product_Size_Type %>
+                                        </p>
+                                        <p>&#x20b9; <%= item.Product_Price %>
+                                                <span
+                                                    style="text-decoration: line-through;font-size: 1rem; padding: 1rem .8rem; color: grey;">
+                                                    <%= item.Product_CutPrice %>
+                                                </span>
+                                        </p>
+                                    </div>
+                                </a>
+                                <% }) %>
+                                    <% } %>
+        </section>
+        </section>
 
-    <!-- HEADING IMAGE SECTION  -->
-    <div class="headingImg">
-        <img src="/images/catban-120230729114515.webp" alt="">
-    </div>
-    <!-- HEADING IMAGE SECTION ENDS -->
 
-    <!-- CATEGORY BAR STARTS  -->
-    <div class="AllCategories">
-        <% if (locals.Categories || locals.path) { %>
-            <% Categories.forEach(element=> { %>
-                <div>
-                    <%= element %>
-                </div>
-            <% }) %>
-        <% } %>
-    </div>
-    <!-- CATEGORY BAR ENDS  -->
 
-    <!-- PRODUCTS SECTION STARTS -->
-    <section class="products">
-        <% if (locals.data) { %>
-            <% if (data.length==0) { %>
-                <p>Add some items</p>
-            <% } %>
-            <% data.forEach(item=> { %>
-                <a href="/Shop/item/<%= item.Product_Name %>"><div class="product-divs">
-                    <div class="imgDiv"> <img src="/<%= item.Product_ImgPaths[0] %>" alt=""></div>
-                    <p><%= item.Product_Name %></p>
-                    <p><%= item.Product_Size_Type %></p>
-                    <p>&#x20b9; <%= item.Product_Price %>
-                        <span
-                            style="text-decoration: line-through;font-size: 1rem; padding: 1rem .8rem; color: grey;">
-                            <%= item.Product_CutPrice %>
-                        </span>
-                    </p>
-                </div></a>
-            <% }) %>
-        <% } %>
-    </section>
+        <!-- PRODUCTS SECTION STARTS -->
 
-    <% if (locals.Categories || locals.data) { %>
-        <% for( let index=1; index < Categories.length; index++ ) { %>
-            <section class="products">
-                <% data.forEach(item=> { %>
-                    <% if (item.Product_Type==Categories[index] ) { %>
-                        <a href="/Shop/item/<%= item.Product_Name %>"><div class="product-divs">
-                            <img src="/<%= item.Product_ImgPaths[0] %>" alt="">
-                            <p><%= item.Product_Name %></p>
-                            <p><%= item.Product_Size_Type %></p>
-                            <p>&#x20b9 <%= item.Product_Price %>
-                                <span
-                                    style="text-decoration: line-through;font-size: 1rem; padding: 1rem .8rem; color: grey;">
-                                    <%= item.Product_CutPrice %>
-                                </span>
-                            </p>
-                        </div></a>
+
+        <% if (locals.Categories || locals.data) { %>
+            <% for( let index=1; index < Categories.length; index++ ) { %>
+                <section class="products">
+                    <% data.forEach(item=> { %>
+                        <% if (item.Product_Type==Categories[index] ) { %>
+                            <a href="/Shop/item/<%= item.Product_Name %>">
+                                <div class="product-divs">
+                                    <img src="/<%= item.Product_ImgPaths[0] %>" alt="">
+                                    <p>
+                                        <%= item.Product_Name %>
+                                    </p>
+                                    <p>
+                                        <%= item.Product_Size_Type %>
+                                    </p>
+                                    <p>&#x20b9 <%= item.Product_Price %>
+                                            <span
+                                                style="text-decoration: line-through;font-size: 1rem; padding: 1rem .8rem; color: grey;">
+                                                <%= item.Product_CutPrice %>
+                                            </span>
+                                    </p>
+                                </div>
+                            </a>
+                            <% } %>
+                                <% }) %>
+                </section>
+                <% } %>
                     <% } %>
-                <% }) %>
-            </section>
-        <% } %>
-    <% } %>
-    <!-- PRODUCTS SECTION ENDS -->
+                        <!-- PRODUCTS SECTION ENDS -->
 
-    <!-- HOMEGROWN SECTION  -->
-    <section class="Homegrown">
-        <div class="container">
-            <div>
-                <h5>HOMEGROWN INDIAN BRAND</h5>
-            </div>
-            <div>
-                <h5>OVER 100K HAPPY CUSTOMERS</h5>
-            </div>
-        </div>
-    </section>
-    <!-- HOMEGROWN SECTION ENDS  -->
+                        <!-- HOMEGROWN SECTION  -->
+                        <section class="Homegrown">
+                            <div class="container">
+                                <div>
+                                    <h5>HOMEGROWN INDIAN BRAND</h5>
+                                </div>
+                                <div>
+                                    <h5>OVER 100K HAPPY CUSTOMERS</h5>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- HOMEGROWN SECTION ENDS  -->
 
-    <!-- FOOTER SECTION  -->
-    <footer>
-        <div class="footer">
-            <div class="footer-div">
-                <h4>Contact</h4>
-                <p><strong>Address:</strong> 30, Vaishnav Vihar, Jhotwara, Jaipur</p>
-                <p><strong>Phone:</strong> +916378952948</p>
-                <p><strong>Hours:</strong> 24*7</p>
-                <h4>Follow Us</h4>
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            </div>
-            <div class="footer-div links">
-                <h4>About</h4>
-                <a href="#">
-                    About us
-                </a>
-                <a href="#">
-                    Delivery Information
-                </a>
-                <a href="#">
-                    Privacy Policy
-                </a>
-                <a href="#">
-                    Terms & Condition
-                </a>
-                <a href="#">
-                    Contact Us
-                </a>
-            </div>
-            <div class="footer-div links">
-                <h4>My Account</h4>
-                <a href="#">
-                    Sign in
-                </a>
-                <a href="#">
-                    View Cart
-                </a>
-                <a href="#">
-                    My Wishlist
-                </a>
-                <a href="#">
-                    Track My Order
-                </a>
-                <a href="#">
-                    Help
-                </a>
-            </div>
-            <div class="footer-div">
-                <p>Secure Payment With </p>
-                <img src="/images/1-removebg-preview.png">
-                <p>Shipping Partners </p>
-                <img src="/images/2-removebg-preview.png">
-            </div>
-        </div>
-    </footer>
-    <!-- FOOTER SECTION ENDS  -->
+                        <!-- FOOTER SECTION  -->
+                        <footer>
+                            <div class="footer">
+                                <div class="footer-div">
+                                    <h4>Contact</h4>
+                                    <p><strong>Address:</strong> 30, Vaishnav Vihar, Jhotwara, Jaipur</p>
+                                    <p><strong>Phone:</strong> +916378952948</p>
+                                    <p><strong>Hours:</strong> 24*7</p>
+                                    <h4>Follow Us</h4>
+                                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                    <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                                <div class="footer-div links">
+                                    <h4>About</h4>
+                                    <a href="#">
+                                        About us
+                                    </a>
+                                    <a href="#">
+                                        Delivery Information
+                                    </a>
+                                    <a href="#">
+                                        Privacy Policy
+                                    </a>
+                                    <a href="#">
+                                        Terms & Condition
+                                    </a>
+                                    <a href="#">
+                                        Contact Us
+                                    </a>
+                                </div>
+                                <div class="footer-div links">
+                                    <h4>My Account</h4>
+                                    <a href="#">
+                                        Sign in
+                                    </a>
+                                    <a href="#">
+                                        View Cart
+                                    </a>
+                                    <a href="#">
+                                        My Wishlist
+                                    </a>
+                                    <a href="#">
+                                        Track My Order
+                                    </a>
+                                    <a href="#">
+                                        Help
+                                    </a>
+                                </div>
+                                <div class="footer-div">
+                                    <p>Secure Payment With </p>
+                                    <img src="/images/1-removebg-preview.png">
+                                    <p>Shipping Partners </p>
+                                    <img src="/images/2-removebg-preview.png">
+                                </div>
+                            </div>
+                        </footer>
+                        <!-- FOOTER SECTION ENDS  -->
 
-    <!-- COPYRIGHT SECTION  -->
-    <div class="copyright">
-        <p>&copy; 2023 Developed By Rajeev Prajapat</p>
-    </div>
-    <!-- COPYRIGHT SECTION ENDS  -->
+                        <!-- COPYRIGHT SECTION  -->
+                        <div class="copyright">
+                            <p>&copy; 2023 Developed By Rajeev Prajapat</p>
+                        </div>
+                        <!-- COPYRIGHT SECTION ENDS  -->
 
-    <script src="/js/shop.js"></script>
+                        <script src="/js/shop.js"></script>
 
-    <%- include('./partials/script.js') %>
+                        <%- include('./partials/script.js') %>
 </body>
 
 </html>

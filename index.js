@@ -1,11 +1,21 @@
 const express = require('express');
+const http = require('http');
+const { Server } = require("socket.io")
 require("dotenv").config();
 const path = require('path');
 const PORT = process.env.PORT || 3000;
 const MONGO_URL = process.env.MONGO_URL || "mongodb://127.0.0.1:27017/FashionView";
 const uri = "mongodb+srv://rajeevprajapat06:Rajeev%4063789@Fashion-View.jr5jy.mongodb.net/FashionView?retryWrites=true&w=majority";
-const  status = require("express-status-monitor");
+const status = require("express-status-monitor");
 const app = express();
+const server = http.createServer(app);
+const io = new Server(server);
+const {
+  womenProducts,
+  menProducts,
+  womenCategories,
+  menCategories
+} = require("./models/productSchema");
 
 const { mongoConnect } = require('./connection');
 const { User } = require('./models/user');
@@ -33,6 +43,26 @@ app.use(express.static(path.resolve("./public")));
 app.use("/", staticRouter);
 app.use("/user", userRoute);
 
-app.listen(PORT, () => {
+async function find() {
+  const data = await new Promise((resolve)=>{
+    setTimeout(()=>{
+      resolve(womenCategories.findOne({ Categories: { $type: "array" } }))
+    },1000)
+  }) 
+  return data;
+}
+
+io.on("connection", (socket) => {
+  console.log("user connected", socket.id);
+  socket.emit('productData', find().then((result)=>{
+    console.log("Done");
+  }));
+
+  socket.on('disconnect', () => {
+    console.log('A user disconnected:', socket.id);
+  });
+})
+
+server.listen(PORT, () => {
   console.log(`Server running on ${PORT}`);
 });
