@@ -29,6 +29,7 @@ input[type="number"]::-webkit-inner-spin-button {
   border: none;
   text-decoration: none;
   transition: none;
+  text-transform: none;
 }
 
 html {
@@ -89,7 +90,6 @@ span {
 }
 
 .header .header-1 .logo {
-  text-transform: lowercase;
   font-size: 3.5rem;
   font-weight: 400;
   color: var(--heading-color);
@@ -484,20 +484,20 @@ footer .footer .footer-div:nth-child(4) p {
 
 .shopMainDiv {
   width: 100%;
-  display: flex;
+  /* display: flex; */
 }
 
 /* CATEGORY BAR CSS STARTS  */
 .AllCategories {
-  width: 15%;
-  /* display: grid;
+  width: 70%;
+  display: grid;
   align-items: center;
   justify-content: center;
   text-align: center;
   grid-template-columns: repeat(6, 1fr);
   gap: 0.5rem;
-  margin: 2rem 18% 0 18%;
-  overflow: hidden; */
+  margin: 2rem 15%;
+  overflow: hidden; 
 }
 .AllCategories div {
   font-family: var(--heading-font);
@@ -525,7 +525,7 @@ footer .footer .footer-div:nth-child(4) p {
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
   gap: 3rem;
-  margin: 3% 10%;
+  margin: 3% 8%;
   display: none;
 }
 
@@ -876,16 +876,16 @@ footer .footer .footer-div:nth-child(4) p {
   }
   .products {
     grid-template-columns: repeat(2, 1fr);
-    margin: 3% 5%;
+    margin: 3% 6%;
     gap: 2rem;
   }
   .AllCategories {
-    gap: 0.1rem;
-    margin: 2rem 3% 0 3%;
+    gap: 0.7rem;
+    /* margin: 2rem 10%; */
   }
   .AllCategories a div {
     font-family: var(--heading-font);
-    font-size: 1.3rem;
+    /* font-size: 1.3rem; */
     padding: 0.5rem;
   }
   @keyframes typingForward {
