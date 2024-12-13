@@ -43,26 +43,7 @@ app.use(express.static(path.resolve("./public")));
 app.use("/", staticRouter);
 app.use("/user", userRoute);
 
-async function find() {
-  const data = await new Promise((resolve)=>{
-    setTimeout(()=>{
-      resolve(womenCategories.findOne({ Categories: { $type: "array" } }))
-    },1000)
-  }) 
-  return data;
-}
 
-io.on("connection", (socket) => {
-  console.log("user connected", socket.id);
-  socket.emit('productData', find().then((result)=>{
-    console.log("Done");
-  }));
-
-  socket.on('disconnect', () => {
-    console.log('A user disconnected:', socket.id);
-  });
-})
-
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`Server running on ${PORT}`);
 });
