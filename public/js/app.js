@@ -15,10 +15,8 @@ let slideshow = () => {
     dots.forEach(dot => dot.classList.remove("activate"));
 
     slideIndex = (slideIndex % totalSlides) + 1;
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].classList.add("activate");
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].classList.add("activate");
     setTimeout(slideshow, 2000);
 }
 slideshow();
-
-
