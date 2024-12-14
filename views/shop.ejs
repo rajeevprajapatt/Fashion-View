@@ -8,42 +8,76 @@
 
 <body>
     <%- include('./partials/navbar') %>
+        <%- include('./partials/wishListBar') %>
 
-        <!-- HEADING IMAGE SECTION  -->
-        <div class="headingImg">
-            <img src="/images/catban-120230729114515.webp" alt="">
-        </div>
-        <!-- HEADING IMAGE SECTION ENDS -->
-
-        <div id="documentDisplay"></div>
-        <section class="shopMainDiv">
-            <!-- CATEGORY BAR STARTS  -->
-            <div class="AllCategories" id="AllCategories">
-                <% if (locals.Categories || locals.path) { %>
-                    <% Categories.forEach(element=> { %>
-                        <div>
-                            <%= element %>
-                        </div>
-                        <% }) %>
-                            <% } %>
+            <!-- HEADING IMAGE SECTION  -->
+            <div class="headingImg">
+                <img src="/images/catban-120230729114515.webp" alt="">
             </div>
-            <!-- CATEGORY BAR ENDS  -->
-            <div class="products">
-                <% if (locals.data) { %>
-                    <% if (data.length==0) { %>
-                        <p>Add some items</p>
-                        <% } %>
-                            <% data.forEach(item=> { %>
+            <!-- HEADING IMAGE SECTION ENDS -->
+
+            <div id="documentDisplay"></div>
+            <section class="shopMainDiv">
+                <!-- CATEGORY BAR STARTS  -->
+                <div class="AllCategories" id="AllCategories">
+                    <% if (locals.Categories || locals.path) { %>
+                        <% Categories.forEach(element=> { %>
+                            <div>
+                                <%= element %>
+                            </div>
+                            <% }) %>
+                                <% } %>
+                </div>
+                <!-- CATEGORY BAR ENDS  -->
+                <div class="products">
+                    <% if (locals.data) { %>
+                        <% if (data.length==0) { %>
+                            <p>Add some items</p>
+                            <% } %>
+                                <% data.forEach(item=> { %>
+                                    <a href="/Shop/item/<%= item.Product_Name %>">
+                                        <div class="product-divs">
+                                            <div class="imgDiv"> <img src="/<%= item.Product_ImgPaths[0] %>" alt="">
+                                            </div>
+                                            <p>
+                                                <%= item.Product_Name %>
+                                            </p>
+                                            <p>
+                                                <%= item.Product_Size_Type %>
+                                            </p>
+                                            <p>&#x20b9; <%= item.Product_Price %>
+                                                    <span
+                                                        style="text-decoration: line-through;font-size: 1rem; padding: 1rem .8rem; color: grey;">
+                                                        <%= item.Product_CutPrice %>
+                                                    </span>
+                                            </p>
+                                        </div>
+                                    </a>
+                                    <% }) %>
+                                        <% } %>
+            </section>
+            </section>
+
+
+
+            <!-- PRODUCTS SECTION STARTS -->
+
+
+            <% if (locals.Categories || locals.data) { %>
+                <% for( let index=1; index < Categories.length; index++ ) { %>
+                    <section class="products">
+                        <% data.forEach(item=> { %>
+                            <% if (item.Product_Type==Categories[index] ) { %>
                                 <a href="/Shop/item/<%= item.Product_Name %>">
                                     <div class="product-divs">
-                                        <div class="imgDiv"> <img src="/<%= item.Product_ImgPaths[0] %>" alt=""></div>
+                                        <img src="/<%= item.Product_ImgPaths[0] %>" alt="">
                                         <p>
                                             <%= item.Product_Name %>
                                         </p>
                                         <p>
                                             <%= item.Product_Size_Type %>
                                         </p>
-                                        <p>&#x20b9; <%= item.Product_Price %>
+                                        <p>&#x20b9 <%= item.Product_Price %>
                                                 <span
                                                     style="text-decoration: line-through;font-size: 1rem; padding: 1rem .8rem; color: grey;">
                                                     <%= item.Product_CutPrice %>
@@ -51,105 +85,33 @@
                                         </p>
                                     </div>
                                 </a>
-                                <% }) %>
-                                    <% } %>
-        </section>
-        </section>
-
-
-
-        <!-- PRODUCTS SECTION STARTS -->
-
-
-        <% if (locals.Categories || locals.data) { %>
-            <% for( let index=1; index < Categories.length; index++ ) { %>
-                <section class="products">
-                    <% data.forEach(item=> { %>
-                        <% if (item.Product_Type==Categories[index] ) { %>
-                            <a href="/Shop/item/<%= item.Product_Name %>">
-                                <div class="product-divs">
-                                    <img src="/<%= item.Product_ImgPaths[0] %>" alt="">
-                                    <p>
-                                        <%= item.Product_Name %>
-                                    </p>
-                                    <p>
-                                        <%= item.Product_Size_Type %>
-                                    </p>
-                                    <p>&#x20b9 <%= item.Product_Price %>
-                                            <span
-                                                style="text-decoration: line-through;font-size: 1rem; padding: 1rem .8rem; color: grey;">
-                                                <%= item.Product_CutPrice %>
-                                            </span>
-                                    </p>
-                                </div>
-                            </a>
-                            <% } %>
-                                <% }) %>
-                </section>
-                <% } %>
+                                <% } %>
+                                    <% }) %>
+                    </section>
                     <% } %>
-                        <!-- PRODUCTS SECTION ENDS -->
+                        <% } %>
+                            <!-- PRODUCTS SECTION ENDS -->
 
-                        <!-- HOMEGROWN SECTION  -->
-                        <%- include("./partials/homeGrownBranding") %>
-                        <!-- HOMEGROWN SECTION ENDS  -->
+                            <!-- HOMEGROWN SECTION  -->
+                            <%- include("./partials/homeGrownBranding") %>
+                                <!-- HOMEGROWN SECTION ENDS  -->
 
-                        <!-- FOOTER SECTION  -->
-                        <%- include("./partials/footer") %>
-                        <!-- FOOTER SECTION ENDS  -->
+                                <!-- FOOTER SECTION  -->
+                                <%- include("./partials/footer") %>
+                                    <!-- FOOTER SECTION ENDS  -->
 
-                        <!-- COPYRIGHT SECTION  -->
-                        <div class="copyright">
-                            <p>&copy; 2023 Developed By Rajeev Prajapat</p>
-                        </div>
-                        <!-- COPYRIGHT SECTION ENDS  -->
+                                    <!-- COPYRIGHT SECTION  -->
+                                    <div class="copyright">
+                                        <p>&copy; 2023 Developed By Rajeev Prajapat</p>
+                                    </div>
+                                    <!-- COPYRIGHT SECTION ENDS  -->
 
-                        <script src="/js/shop.js"></script>
-
-                        <%- include('./partials/script.js') %>
+                                    <script src="/js/shop.js"></script>
 
 
-                            <script src="/socket.io/socket.io.js"></script>
-                            <script>
-                                const socket = io();
-                                socket.on('connect', () => {
-                                    console.log('Connected to the server');
-                                });
-                                socket.on('documentData', (document) => {
-                                    if (document) {
-                                        displayDocument(document);
-                                    } else {
-                                        document.getElementById('documentDisplay').innerHTML = 'No document found';
-                                    }
-                                });
-                                function displayDocument(document) {
-                                    const documentDisplay = document.getElementById('documentDisplay');
-                                    documentDisplay.innerHTML = `
-        <p>Name:Rajeev </p>
-        <p>Age: vnfdivbi</p>
-        <!-- Add other fields as needed -->
-      `;
-                                }
-                                // function renderCategories(products) {
-                                //     // const productsDiv = document.querySelector('.AllCategories');
-                                //     // productsDiv.innerHTML = '';
-                                //     console.log("hyy")
-                                //     // products.forEach(product => {
-                                //     //     // const productDiv = document.createElement('div');
-                                //     //     // productDiv.className = 'product';
-                                //     //     productDiv.innerHTML = `
-                                //     //             <h3>${product}</h3>
+                                    <%- include('./partials/script.js') %>
 
-                                //     //             `;
-                                //     //     productsDiv.appendChild(productDiv);
-                                //     // });
-                                // }
 
-                                // socket.on('productData', (products) => {
-                                //     renderCategories(products);
-                                // });
-                                console.log("end")
-                            </script>
 </body>
 
 </html>

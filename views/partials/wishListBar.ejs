@@ -1,0 +1,25 @@
+<div class="wishListBar">
+    <div class="wishListBarHeading">
+        <a href="#" class="fa-solid fa-xmark" id="wishListCrossBtn"></a>
+        <h1>Wish List <i href="#" class="fas fa-heart"></i></h1>
+    </div>
+    <div class="wishListItemsDiv">
+        <div class="wishListItemsInnerDiv1">
+            <img src="/productImages/1686201043_2499895.webp" alt="">
+        </div>
+        <div class="wishListItemsInnerDiv2">
+        </div>
+    </div>
+</div>
+<script>
+    let wishListNavBtn = document.getElementById("wishListNavBtn");
+    let wishListCrossBtn = document.getElementById("wishListCrossBtn");
+    let wishListBar = document.querySelector(".wishListBar");
+
+    wishListNavBtn.addEventListener('click', () => {
+        wishListBar.style.right = "0";
+    })
+    wishListCrossBtn.addEventListener('click', () => {
+        wishListBar.style.right = "-200%";
+    })
+</script>

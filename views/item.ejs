@@ -8,94 +8,95 @@
 
 <body>
     <%- include('./partials/navbar') %>
+        <%- include('./partials/wishListBar') %>
 
-        <section class="itemPreview">
-            <% if (locals.item) { %>
-                <div class="itemPreviewDiv1">
-                    <% item.Product_ImgPaths.forEach(paths=> { %>
-                        <div>
-                            <img src="/<%= paths %>" alt="" width="100%">
-                        </div>
-                        <% }) %>
-                </div>
-                <div class="itemPreviewDiv2">
-                    <h1>
-                        <%= item.Product_Name %>
-                    </h1>
-                    <h4>
-                        <%= item.Product_Size_Type %>
-                    </h4>
+            <section class="itemPreview">
+                <% if (locals.item) { %>
+                    <div class="itemPreviewDiv1">
+                        <% item.Product_ImgPaths.forEach(paths=> { %>
+                            <div>
+                                <img src="/<%= paths %>" alt="" width="100%">
+                            </div>
+                            <% }) %>
+                    </div>
+                    <div class="itemPreviewDiv2">
+                        <h1>
+                            <%= item.Product_Name %>
+                        </h1>
+                        <h4>
+                            <%= item.Product_Size_Type %>
+                        </h4>
 
-                    <div class="line"></div>
-                    <h3>
-                        <%= item.Product_Price %> <span>
-                                <%= item.Product_CutPrice %>
-                            </span>
-                    </h3>
-                    <form action="">
-                        <div class="size-options">
-                            <h5>Please select a size.</h5>
-                            <% item.Product_Sizes.forEach(element=> { %>
-                                <button type="button" id="sizeBtn" onclick="selectSize(this)">
-                                    <%= element %>
-                                </button>
-                                <% }) %>
-                        </div>
-                        <h5>Quantity. <select name="quantity" id="" class="quantity">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select> </h5>
-                        <button class="cartBtn">BUY NOW</button>
-                        <button class="wishlistBtn">ADD TO CART</button>
-                    </form>
+                        <div class="line"></div>
+                        <h3>
+                            <%= item.Product_Price %> <span>
+                                    <%= item.Product_CutPrice %>
+                                </span>
+                        </h3>
+                        <form action="">
+                            <div class="size-options">
+                                <h5>Please select a size.</h5>
+                                <% item.Product_Sizes.forEach(element=> { %>
+                                    <button type="button" id="sizeBtn" onclick="selectSize(this)">
+                                        <%= element %>
+                                    </button>
+                                    <% }) %>
+                            </div>
+                            <h5>Quantity. <select name="quantity" id="" class="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select> </h5>
+                            <button class="cartBtn">BUY NOW</button>
+                            <button class="wishlistBtn">ADD TO CART</button>
+                        </form>
 
-                    <h5>Share
-                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    </h5>
+                        <h5>Share
+                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        </h5>
 
-                    <h5>Delivery Details</h5>
-                    <form class="pincodeCheckForm" action="">
-                        <input type="number" name="pincode" id="pincodeCheck" placeholder="Enter Pincode">
-                        <label for="pincodeCheck">CHECK</label>
-                    </form>
+                        <h5>Delivery Details</h5>
+                        <form class="pincodeCheckForm" action="">
+                            <input type="number" name="pincode" id="pincodeCheck" placeholder="Enter Pincode">
+                            <label for="pincodeCheck">CHECK</label>
+                        </form>
 
-                    <h5>Product Description</h5>
-                    <p class="desc">
-                        <%= item.Product_Description %>
-                    </p>
+                        <h5>Product Description</h5>
+                        <p class="desc">
+                            <%= item.Product_Description %>
+                        </p>
 
-                </div>
-                <% } %>
-        </section>
+                    </div>
+                    <% } %>
+            </section>
 
-        <!-- HOMEGROWN SECTION  -->
-        <%- include("./partials/homeGrownBranding") %>
-        <!-- HOMEGROWN SECTION ENDS  -->
+            <!-- HOMEGROWN SECTION  -->
+            <%- include("./partials/homeGrownBranding") %>
+                <!-- HOMEGROWN SECTION ENDS  -->
 
-        <!-- FOOTER SECTION  -->
-        <%- include("./partials/footer") %>
-        <!-- FOOTER SECTION ENDS  -->
+                <!-- FOOTER SECTION  -->
+                <%- include("./partials/footer") %>
+                    <!-- FOOTER SECTION ENDS  -->
 
-        <!-- COPYRIGHT SECTION  -->
-        <div class="copyright">
-            <p>&copy; 2023 Developed By Rajeev Prajapat</p>
-        </div>
-        <!-- COPYRIGHT SECTION ENDS  -->
+                    <!-- COPYRIGHT SECTION  -->
+                    <div class="copyright">
+                        <p>&copy; 2023 Developed By Rajeev Prajapat</p>
+                    </div>
+                    <!-- COPYRIGHT SECTION ENDS  -->
 
-        <script src="/js/item.js"></script>
+                    <script src="/js/item.js"></script>
 
-        
+
 </body>
 
 </html>
