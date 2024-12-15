@@ -212,22 +212,23 @@ span {
   top: 0;
   right: -200%;
   z-index: 200;
-  transition: .8s;
+  transition: 0.8s;
   backdrop-filter: blur(20px);
+  scrollbar-width: none;
 }
-.wishListBarHeading{
+.wishListBarHeading {
   display: flex;
   justify-content: space-between;
   margin: 2% 0;
 }
-.wishListBar a{
+.wishListBar a {
   font-size: 3.5rem;
   padding: 0 4%;
   color: var(--text-color);
   cursor: pointer;
   transition: 0.4s;
 }
-.wishListBar h1{
+.wishListBar h1 {
   font-size: 3rem;
   padding: 0 6%;
   color: var(--text-color);
@@ -236,19 +237,54 @@ span {
   font-family: var(--heading-font);
 }
 
-.wishListBar .wishListItemsDiv {
+.wishListItemsDiv {
+  display: flex;
   width: 94%;
   margin: 1% 3%;
-  border: 2px solid black;
+  border: 1px solid black;
 }
 
 .wishListItemsInnerDiv1 {
   width: 30%;
-  border: 2px solid red;
+  height: 100%;
+  margin: 1% 1%;
+  /* border: 2px solid red; */
 }
 
 .wishListItemsInnerDiv1 img {
   width: 100%;
+  display: block;
+  /* object-fit: cover; */
+}
+.wishListItemsInnerDiv2 h3 {
+  font-size: 2.3rem;
+  font-family: var(--basic-font);
+  padding-bottom: 2.5rem;
+  padding: 2% 0 1% 4%;
+}
+.wishListItemsInnerDiv2 h5 {
+  font-size: 2.1rem;
+  font-family: var(--basic-font);
+  padding: 0 0 2% 5%;
+}
+.wishListItemsInnerDiv2 h5 span {
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-decoration: line-through;
+}
+.wishListItemsInnerDiv2 div{
+  margin: 1% 4%;
+}
+.wishListItemsInnerDiv2 div button {
+  font-size: 1.3rem;
+  padding: 1rem 2.2rem;
+  font-family: var(--basic-font);
+  /* margin-right: 1rem; */
+  border-radius: .5rem;
+  cursor: pointer;
+  background: none;
+  border: 1px solid grey;
+  margin: 2% 1%;
 }
 
 /* CATEGORY SECTION CSS STARTS */
@@ -546,7 +582,7 @@ footer .footer .footer-div:nth-child(4) p {
   grid-template-columns: repeat(6, 1fr);
   gap: 0.5rem;
   margin: 2rem 15%;
-  overflow: hidden; 
+  overflow: hidden;
 }
 .AllCategories div {
   font-family: var(--heading-font);

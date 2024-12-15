@@ -18,7 +18,15 @@ const checkUserLogged = async (req, res, next) => {
 
     next();
 }
+const checkUserLogin = async (req, res, next) => {
+    const userUid = req.cookies?.uid;
+
+    if (!userUid) return false;
+    else return true;
+    next();
+}
 
 module.exports = {
-    checkUserLogged
+    checkUserLogged,
+    checkUserLogin
 }

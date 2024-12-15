@@ -3,23 +3,32 @@
         <a href="#" class="fa-solid fa-xmark" id="wishListCrossBtn"></a>
         <h1>Wish List <i href="#" class="fas fa-heart"></i></h1>
     </div>
-    <div class="wishListItemsDiv">
+    <!-- <div class="wishListItemsDiv">
         <div class="wishListItemsInnerDiv1">
             <img src="/productImages/1686201043_2499895.webp" alt="">
         </div>
         <div class="wishListItemsInnerDiv2">
+            <h3>Tom & Jerry: Munching Mischief</h3>
+            <h5>&#8377; 899 <span> 999</span></h5>
+            <div>
+                <button class="cartBtn">MOVE TO CART</button>
+                <button class="removeBtn">REMOVE</button>
+            </div>
         </div>
-    </div>
+    </div> -->
+    
 </div>
 <script>
     let wishListNavBtn = document.getElementById("wishListNavBtn");
     let wishListCrossBtn = document.getElementById("wishListCrossBtn");
     let wishListBar = document.querySelector(".wishListBar");
-
+    let body = document.getElementsByTagName("body");
+    
     wishListNavBtn.addEventListener('click', () => {
         wishListBar.style.right = "0";
     })
     wishListCrossBtn.addEventListener('click', () => {
         wishListBar.style.right = "-200%";
     })
+    
 </script>

@@ -1,5 +1,5 @@
 const express = require("express");
-const { checkUserLogged } = require("../middlewares/auth");
+const { checkUserLogged,checkUserLogin } = require("../middlewares/auth");
 const { AllMenProducts, ItemInsertion, AllWomenProducts, GetItem } = require("../controllers/products");
 const { HomeActivities } = require("../controllers/mainrouter");
 const multer = require("multer");
@@ -32,6 +32,8 @@ router.get("/Shop", (req, res) => {
 router.get("/Shop/Women", AllWomenProducts);
 router.get("/Shop/Men", AllMenProducts);
 router.get("/Shop/item/:itemName", GetItem);
+// router.get("/wishListBar",checkUserLogin,GetWishListItems);
+// router.get("/cartBar",checkUserLogin,GetCartItems);
 
 // Item Insertion ROutes
 router.get("/ItemsInsertion", (req, res) => {
