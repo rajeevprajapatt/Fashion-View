@@ -1,5 +1,5 @@
 const express = require("express");
-const { checkUserLogged,checkUserLogin } = require("../middlewares/auth");
+const { checkUserLogged, checkUserLogin } = require("../middlewares/auth");
 const { AllMenProducts, ItemInsertion, AllWomenProducts, GetItem } = require("../controllers/products");
 const { HomeActivities } = require("../controllers/mainrouter");
 const multer = require("multer");
@@ -24,6 +24,10 @@ router.get("/user/login", checkUserLogged);
 router.get("/user/signup", (req, res) => {
     res.render('signup');
 });
+
+router.get("/cart", (req, res) => {
+    res.render('cart');
+})
 
 // Shop Routes
 router.get("/Shop", (req, res) => {

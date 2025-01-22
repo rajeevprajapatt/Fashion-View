@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <%- include('./partials/head') %>
+   <title>Cart Page</title>
+</head>
+
+<body>
+    <%- include('./partials/navbar') %>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Product name</th>
+                <th>Unit price</th>
+                <th>Stock status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="fa-solid fa-xmark" ></span></td>
+                <td style="display: flex;">
+                    <!-- <div style="width: 5rem;"> -->
+                        <img class="product-image" src="/productImages/1685447774_3186210.webp" alt="Beanie with Logo">
+                    <!-- </div> -->
+                    <span style="padding-left: 2rem;">Beanie with Logo
+                    </span>
+                </td>
+                <td>
+                    <span class="price">$20.00</span>
+                    <span class="discount-price">$18.00</span>
+                </td>
+                <td>In Stock</td>
+                <td>
+                    <p>Added on: December 5, 2019</p>
+                    <button class="add-to-cart">Add to cart</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <%- include('./partials/script.js') %>
+</body>
+
+</html>

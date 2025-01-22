@@ -12,6 +12,10 @@
   --black: #000000;
   --text-color: rgb(0, 0, 0);
   --normal-border: 1px solid var(--text-color);
+  --H1: 3rem;
+  --H3: 1.8rem;
+  --H4: 2.3rem;
+  --H5: 1.5rem;
 }
 /* Remove the arrows for Chrome, Safari, Edge, Opera */
 input[type="number"]::-webkit-outer-spin-button,
@@ -272,7 +276,7 @@ span {
   font-size: 1.5rem;
   text-decoration: line-through;
 }
-.wishListItemsInnerDiv2 div{
+.wishListItemsInnerDiv2 div {
   margin: 1% 4%;
 }
 .wishListItemsInnerDiv2 div button {
@@ -280,7 +284,7 @@ span {
   padding: 1rem 2.2rem;
   font-family: var(--basic-font);
   /* margin-right: 1rem; */
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   cursor: pointer;
   background: none;
   border: 1px solid grey;
@@ -671,17 +675,17 @@ footer .footer .footer-div:nth-child(4) p {
   /* background-color: rgb(38, 0, 255); */
 }
 .itemPreviewDiv2 h1 {
-  font-size: 3rem;
+  font-size: var(--H1);
   font-family: var(--heading-font);
   padding: 3rem 0 0 0;
 }
-.itemPreviewDiv2 h4 {
-  font-size: 1.5rem;
+.itemPreviewDiv2 h5 {
+  font-size: var(--H5);
   font-family: var(--basic-font);
   padding: 0 0 2rem 0.2rem;
 }
 .itemPreviewDiv2 p {
-  font-size: 1.4rem;
+  font-size: var(--H5);
   font-family: var(--basic-font);
   padding: 0 4rem 3rem 0;
   font-weight: 200;
@@ -689,22 +693,22 @@ footer .footer .footer-div:nth-child(4) p {
   color: var(--text-color);
 }
 .itemPreviewDiv2 h3 {
-  font-size: 2.3rem;
+  font-size: var(--H3);
   font-family: var(--basic-font);
-  padding-bottom: 2.5rem;
+  padding-bottom: var(--H3);
 }
 .itemPreviewDiv2 h5 {
   font-size: 1.8rem;
   font-family: var(--basic-font);
-  padding-bottom: 2.5rem;
+  padding-bottom: var(--H3);
 }
 .itemPreviewDiv2 h3 span {
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: var(--H5);
   text-decoration: line-through;
 }
 .itemPreviewDiv2 button {
-  font-size: 1.5rem;
+  font-size: var(--H5);
   padding: 1rem 2.2rem;
   margin-right: 1rem;
   border-radius: 2rem;
@@ -726,7 +730,7 @@ footer .footer .footer-div:nth-child(4) p {
 }
 .itemPreviewDiv2 .quantity {
   border: 1px solid rgb(70, 70, 70);
-  font-size: 1.8rem;
+  font-size: var(--H5);
   padding: 0.3rem 0.3rem;
   border-radius: 0.6rem;
   cursor: pointer;
@@ -749,7 +753,7 @@ footer .footer .footer-div:nth-child(4) p {
 }
 .itemPreviewDiv2 i {
   color: var(--text-color);
-  font-size: 1.8rem;
+  font-size: var(--H4);
   padding: 0 0.5rem;
 }
 .itemPreviewDiv2 .pincodeCheckForm {
@@ -765,7 +769,7 @@ footer .footer .footer-div:nth-child(4) p {
 }
 .itemPreviewDiv2 form input {
   width: 100%;
-  font-size: 1.6rem;
+  font-size:var(--H5);
 }
 
 /* .itemPreviewDiv2 input{
@@ -858,6 +862,70 @@ footer .footer .footer-div:nth-child(4) p {
   transition: 1s;
 }
 /* SIGN UP PAGE CSS ENDS */
+
+/* CART PAGE CSS STARTS */
+
+table {
+  font-family: var(--heading-font);
+  width: 70%;
+  margin: 6% 15%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  border-bottom: 3px solid #ddd;
+  text-align: center;
+  align-items: center;
+}
+th{
+  font-size: var(--H5);
+  font-weight: 600;
+}
+td{
+  font-size: var(--H5);
+  font-weight: 200;
+}
+
+/* th {
+  background-color: #f2f2f2;
+  align-items: center;
+  text-align: center;
+} */
+
+.product-image {
+  width: 10rem;
+}
+
+.price {
+  text-decoration: line-through;
+  font-weight: 300;
+}
+
+.discount-price {
+  color: green;
+  font-weight: 300
+}
+
+.add-to-cart {
+  border-radius: 0.3rem;
+  font-weight: 400;
+  color: white;
+  padding: 0.8rem 5rem;
+  background-color: var(--heading-color);
+  font-size: var(--H5);
+  margin: 1% 0;
+  /* padding: 1rem 2.2rem;  */
+  /*margin-right: 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  background: none;
+  border: 1px solid grey;
+  margin-bottom: 2.5rem; */
+}
+
+/* CART PAGE CSS ENDS */
 
 /* ------------------------------------- */
 
