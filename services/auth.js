@@ -6,7 +6,7 @@ const setUser = (user) => {
     return jwt.sign({
         _id: user._id,
         email: user.email
-    }, secretKey);
+    }, secretKey, { expiresIn: "90h" });
 }
 
 const getUser = (token) => {

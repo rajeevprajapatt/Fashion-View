@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const { type } = require('jquery');
+const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -26,6 +27,13 @@ const userSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
+userSchema.statics.hashPassword = (password) => {
+    return bcrypt.hashSync(password, 10);
+}
+
+userSchema.methods.isValidPassword = async(password) => {
+    return await bcrypt.compare(password,this.password);
+}
 
 const User = mongoose.model("User", userSchema);
 module.exports = {

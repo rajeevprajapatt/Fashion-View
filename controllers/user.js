@@ -16,10 +16,12 @@ async function handleUserSignUp(req, res) {
             return res.status(400).render("signup", { msg: "Please try with a different email" });
         }
 
+        const hashedPassword = User.hashPassword(password);
+
         const newUser = await User.create({
             name,
             email,
-            password,
+            password:hashedPassword,
             path: file
         });
 
@@ -44,6 +46,12 @@ async function handleUserLogin(req, res) {
         // find the user by mail
         const user = await User.findOne({ email });
         if (!user) return res.status(400).render("login", {
+            msg: "Invalid username or password",
+        });
+
+        // check if the password is correct
+        const isValidPassword = await user.isValidPassword(password);
+        if (!isValidPassword) return res.status(400).render("login", {
             msg: "Invalid username or password",
         });
 

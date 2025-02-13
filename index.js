@@ -24,7 +24,7 @@ const userRoute = require("./routes/user");
 const { checkUserLogged } = require("./middlewares/auth");
 const cookieParser = require('cookie-parser');
 
-mongoConnect(uri).then(() => {
+mongoConnect(MONGO_URL).then(() => {
   console.log("MongoDB connected successfully");
 })
 // mongoConnect(MONGO_URL).then(() => {
