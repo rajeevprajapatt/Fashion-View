@@ -43,15 +43,15 @@ async function handleUserLogin(req, res) {
     }
 
     try {
-        // find the user by mail
+        // find the user by email
         const user = await User.findOne({ email });
         if (!user) return res.status(400).render("login", {
             msg: "Invalid username or password",
         });
 
         // check if the password is correct
-        const isValidPassword = await user.isValidPassword(password);
-        if (!isValidPassword) return res.status(400).render("login", {
+        const isMatch = await user.isValidPassword(password);
+        if (!isMatch) return res.status(400).render("login", {
             msg: "Invalid username or password",
         });
 

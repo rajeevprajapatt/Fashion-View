@@ -20,8 +20,8 @@
             <section class="shopMainDiv">
                 <!-- CATEGORY BAR STARTS  -->
                 <div class="AllCategories" id="AllCategories">
-                    <% if (locals.Categories || locals.path) { %>
-                        <% Categories.forEach(element=> { %>
+                    <% if (locals.category || locals.path) { %>
+                        <% category.forEach(element=> { %>
                             <div>
                                 <%= element %>
                             </div>
@@ -63,11 +63,11 @@
             <!-- PRODUCTS SECTION STARTS -->
 
 
-            <% if (locals.Categories || locals.data) { %>
-                <% for( let index=1; index < Categories.length; index++ ) { %>
+            <% if (locals.category || locals.data) { %>
+                <% for( let index=1; index < category.length; index++ ) { %>
                     <section class="products">
                         <% data.forEach(item=> { %>
-                            <% if (item.Product_Type==Categories[index] ) { %>
+                            <% if (item.Product_Type==category[index] ) { %>
                                 <a href="/Shop/item/<%= item.Product_Name %>">
                                     <div class="product-divs">
                                         <img src="/<%= item.Product_ImgPaths[0] %>" alt="">

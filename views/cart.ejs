@@ -1,46 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-   <%- include('./partials/head') %>
-   <title>Cart Page</title>
+    <title>Shopping Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .table th, .table td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        .table th {
+            background-color: #f4f4f4;
+            color: #555;
+        }
+        .table td img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .summary {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .summary h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn-danger {
+            background-color: #e74c3c;
+            color: #fff;
+        }
+        .btn-primary {
+            background-color: #3498db;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+        .btn-danger:hover {
+            background-color: #c0392b;
+        }
+    </style>
 </head>
-
 <body>
-    <%- include('./partials/navbar') %>
-    <table>
-        <thead>
-            <tr>
-                <th></th>
-                <th>Product name</th>
-                <th>Unit price</th>
-                <th>Stock status</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><span class="fa-solid fa-xmark" ></span></td>
-                <td style="display: flex;">
-                    <!-- <div style="width: 5rem;"> -->
-                        <img class="product-image" src="/productImages/1685447774_3186210.webp" alt="Beanie with Logo">
-                    <!-- </div> -->
-                    <span style="padding-left: 2rem;">Beanie with Logo
-                    </span>
-                </td>
-                <td>
-                    <span class="price">$20.00</span>
-                    <span class="discount-price">$18.00</span>
-                </td>
-                <td>In Stock</td>
-                <td>
-                    <p>Added on: December 5, 2019</p>
-                    <button class="add-to-cart">Add to cart</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <%- include('./partials/script.js') %>
+    <div class="container">
+        <h1>Your Shopping Cart</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (locals.data) { %>
+                    <% cartItems.forEach(item => { %>
+                        <tr>
+                            <td><img src="<%= item.image %>" alt="<%= item.name %>"></td>
+                            <td><%= item.name %></td>
+                            <td><%= item.quantity %></td>
+                            <td>$<%= item.price %></td>
+                            <td>$<%= item.quantity * item.price %></td>
+                            <td>
+                                <form action="/cart/remove/<%= item.id %>" method="POST">
+                                    <button type="submit" class="btn btn-danger">Remove</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <% }); %>
+                <% } %>
+            </tbody>
+        </table>
+        <div class="summary">
+            <h2>Order Summary</h2>
+            <p>Subtotal:  subtotal </p>
+            <p>Tax: </p>
+            <p><strong>Total: </strong></p>
+            <form action="/checkout" method="POST">
+                <button type="submit" class="btn btn-primary">Proceed to Checkout</button>
+            </form>
+        </div>
+    </div>
 </body>
-
 </html>

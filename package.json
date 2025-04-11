@@ -8,7 +8,6 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cookie-parser": "^1.4.6",
@@ -25,6 +24,20 @@
     "uuid": "^10.0.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.4"
-  }
+    "autoprefixer": "^10.4.20",
+    "nodemon": "^3.1.4",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.0.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajeevprajapatt/Fashion-View.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rajeevprajapatt/Fashion-View/issues"
+  },
+  "homepage": "https://github.com/rajeevprajapatt/Fashion-View#readme",
+  "description": ""
 }

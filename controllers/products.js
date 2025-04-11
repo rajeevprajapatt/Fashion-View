@@ -1,43 +1,36 @@
 const express = require("express");
 const Url = require("url");
-const {
-    womenProducts,
-    menProducts,
-    womenCategories,
-    menCategories
-} = require("../models/productSchema");
+const ProductSchema = require("../models/productSchema");
 
-async function getAllProducts(req, res, productCollection, productCategory) {
+async function getAllProducts(req, res,) {
     try {
-        const [items, category] = await Promise.all([
-            productCollection.find({}),
-            productCategory.findOne({ Categories: { $type: "array" } })
-        ]);
+        let items, category;
 
+        if (req.params.gender === "Women") {
+            category = await ProductSchema.womenCategories.findOne({}).then(doc => {
+                return doc.Categories;
+            });
+            items = await ProductSchema.Products.find({ Product_Category: "Women" })
+        }
+        else {
+            category = await ProductSchema.menCategories.findOne({}).then(doc => {
+                return doc.Categories;
+            });
+            items = await ProductSchema.Products.find({ Product_Category: "Men" })
+        }
         if (!category || !items) {
             return res.status(404).send("Categories or Products not found.");
         }
 
-        const Categories = category.Categories;
         res.render("shop", {
             data: items,
-            Categories,
+            category,
             path: req.path
         });
     } catch (error) {
         console.error("Error to get products:", error);
         res.status(500).send("Error while getting a product");
     }
-}
-
-// Function to handle fetching all women's products
-async function AllWomenProducts(req, res) {
-    return getAllProducts(req, res, womenProducts, womenCategories);
-}
-
-// Function to handle fetching all men's products
-async function AllMenProducts(req, res) {
-    return getAllProducts(req, res, menProducts, menCategories);
 }
 
 async function ItemInsertion(req, res) {
@@ -71,11 +64,7 @@ async function ItemInsertion(req, res) {
 async function GetItem(req, res) {
     const itemName = req.params.itemName;
     try {
-        let itemDetails = await womenProducts.findOne({ Product_Name: itemName });
-
-        if (!itemDetails) {
-            itemDetails = await menProducts.findOne({ Product_Name: itemName });
-        }
+        let itemDetails = await ProductSchema.Products.findOne({ Product_Name: itemName });
 
         if (!itemDetails) {
             return res.status(404).send("Product not found");
@@ -91,8 +80,7 @@ async function GetItem(req, res) {
 }
 
 module.exports = {
-    AllMenProducts,
     ItemInsertion,
-    AllWomenProducts,
-    GetItem
+    GetItem,
+    getAllProducts
 }

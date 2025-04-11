@@ -1,6 +1,7 @@
 const express = require("express");
 const { checkUserLogged, checkUserLogin } = require("../middlewares/auth");
-const { AllMenProducts, ItemInsertion, AllWomenProducts, GetItem } = require("../controllers/products");
+// const { ItemInsertion, GetItem, getAllProducts } = require("../controllers/products");
+const productRoute = require("../controllers/products");
 const { HomeActivities } = require("../controllers/mainrouter");
 const multer = require("multer");
 const router = express.Router();
@@ -33,9 +34,9 @@ router.get("/cart", (req, res) => {
 router.get("/Shop", (req, res) => {
     return res.render('shop');
 });
-router.get("/Shop/Women", AllWomenProducts);
-router.get("/Shop/Men", AllMenProducts);
-router.get("/Shop/item/:itemName", GetItem);
+router.get("/Shop/:gender", productRoute.getAllProducts);
+// router.get("/Shop/", AllMenProducts);
+router.get("/Shop/item/:itemName", productRoute.GetItem);
 // router.get("/wishListBar",checkUserLogin,GetWishListItems);
 // router.get("/cartBar",checkUserLogin,GetCartItems);
 
@@ -43,6 +44,6 @@ router.get("/Shop/item/:itemName", GetItem);
 router.get("/ItemsInsertion", (req, res) => {
     res.render('FVitemsInsertion');
 });
-router.post("/Insert", img.array('imgPath', 4), ItemInsertion);
+router.post("/Insert", img.array('imgPath', 4), productRoute.ItemInsertion);
 
 module.exports = router;
