@@ -4,6 +4,16 @@
 <head>
     <%- include('./partials/head') %>
         <title>Fashion View Shop</title>
+        <style>
+            .headingImg img {
+                transition: opacity 0.5s ease;
+                opacity: 1;
+            }
+
+            .headingImg img.fade-out {
+                opacity: 0;
+            }
+        </style>
 </head>
 
 <body>
@@ -11,7 +21,7 @@
         <%- include('./partials/wishListBar') %>
 
             <!-- HEADING IMAGE SECTION  -->
-            <div class="headingImg">
+            <div class="headingImg" id="headingImg">
                 <img src="/images/catban-120230729114515.webp" alt="">
             </div>
             <!-- HEADING IMAGE SECTION ENDS -->

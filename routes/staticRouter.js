@@ -42,7 +42,8 @@ router.get("/Shop/item/:itemName", productRoute.GetItem);
 
 // Item Insertion ROutes
 router.get("/ItemsInsertion", (req, res) => {
-    res.render('FVitemsInsertion');
+    const msg = req.query.msg || null;
+    res.render('FVitemsInsertion', { msg });
 });
 router.post("/Insert", img.array('imgPath', 4), productRoute.ItemInsertion);
 

@@ -10,12 +10,12 @@ const status = require("express-status-monitor");
 const app = express();
 // const server = http.createServer(app);
 // const io = new Server(server);
-const {
-  womenProducts,
-  menProducts,
-  womenCategories,
-  menCategories
-} = require("./models/productSchema");
+// const {
+//   womenProducts,
+//   menProducts,
+//   womenCategories,
+//   menCategories
+// } = require("./models/productSchema");
 
 const { mongoConnect } = require('./connection');
 const { User } = require('./models/user');

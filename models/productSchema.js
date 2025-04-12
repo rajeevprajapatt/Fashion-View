@@ -39,8 +39,11 @@ const ProductsSchema = new mongoose.Schema({
     },
     Product_Sizes: {
         type: Array
+    },
+    Product_Stock: {
+        type: Number,
     }
-})
+}, { timestamps: true });
 
 
 
