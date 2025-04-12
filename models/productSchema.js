@@ -48,8 +48,6 @@ const ProductsSchema = new mongoose.Schema({
 
 
 const Products = mongoose.model("Products", ProductsSchema);
-// const womenProducts = mongoose.model("womenProduct", womenProductsSchema);
-// const menProducts = mongoose.model("menProduct", menProductsSchema);
 
 const menCategories = mongoose.model("menCategories", menCategorySchema);
 const womenCategories = mongoose.model("womenCategories", womenCategorySchema);

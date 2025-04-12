@@ -26,17 +26,31 @@
             </div>
             <!-- HEADING IMAGE SECTION ENDS -->
 
-            <div id="documentDisplay"></div>
+            <!-- <div id="documentDisplay"></div> -->
             <section class="shopMainDiv">
                 <!-- CATEGORY BAR STARTS  -->
-                <div class="AllCategories" id="AllCategories">
-                    <% if (locals.category || locals.path) { %>
-                        <% category.forEach(element=> { %>
-                            <div>
-                                <%= element %>
-                            </div>
-                            <% }) %>
-                                <% } %>
+                <div class="categoryBar">
+                    <div class="categoryBarItems" id="categoryBarItems">
+                        <% if (locals.category || locals.path) { %>
+                            <ul>
+                                <% category.forEach(element=> { %>
+                                    <li>
+                                        <%= element %>
+                                    </li>
+                                    <% }) %>
+                            </ul>
+                            <% } %>
+                    </div>
+                    <div class="categoryBarSelect" id="categoryBarSelect">   
+                        <select name="" id="">
+                            <option value="Recommended">Sort by: Recommended</option>
+                            <option value="Newest">Sort by: Newest</option>
+                            <option value="lowToHigh">Sort by: Price (low to high)</option>
+                            <option value="highToLow">Sort by: Price (high to low)</option>
+                            <option value="A-Z">Sort by: Name A-Z</option>
+                            <option value="Z-A">Sort by: Name Z-A</option>
+                        </select>
+                    </div>
                 </div>
                 <!-- CATEGORY BAR ENDS  -->
                 <div class="products">
@@ -47,7 +61,7 @@
                                 <% data.forEach(item=> { %>
                                     <a href="/Shop/item/<%= item.Product_Name %>">
                                         <div class="product-divs">
-                                            <div class="imgDiv"> <img src="/<%= item.Product_ImgPaths[0] %>" alt="">
+                                            <div class="imgDiv"> <img src="/<%= item.Product_ImgPaths[1] %>" alt="">
                                             </div>
                                             <p>
                                                 <%= item.Product_Name %>

@@ -34,6 +34,7 @@ input[type="number"]::-webkit-inner-spin-button {
   text-decoration: none;
   transition: none;
   text-transform: none;
+  user-select: none;
 }
 
 html {
@@ -573,33 +574,78 @@ footer .footer .footer-div:nth-child(4) p {
 
 .shopMainDiv {
   width: 100%;
-  /* display: flex; */
+}
+
+.shopMainDiv .categoryBar{
+  width: 84%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3rem 8%;
+  gap: 2rem;
+}
+.shopMainDiv .categoryBar ul{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  list-style-type: none;
+  /* padding: 0;
+  margin: 0; */
+}
+.shopMainDiv .categoryBar .categoryBarItems ul li{
+  font-family: var(--heading-font);
+  font-size: var(--H3);
+  padding: 0 1.5rem;
+  cursor: pointer;
+  /* border: 1px solid var(--heading-color); */
+  /* border-radius: 0.2rem; */
+  transition: all 0.3s ease-in-out;
+  /* user-select: none; */
+}
+
+.shopMainDiv .categoryBar .categoryBarSelect select{
+  font-family: var(--heading-font);
+  font-size: var(--H3);
+  padding: 0.5rem 1rem;
+  border-radius: 0;
+  background: none;
+  transition: all 0.3s ease-in-out; 
+  cursor: pointer;
+  /* background-color: var(--snd-color); */
+  /* font-size: var(--H3);
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  border: 1px solid var(--heading-color);
+  background-color: var(--snd-color);
+  color: var(--text-color);
+ 
+ */
 }
 
 /* CATEGORY BAR CSS STARTS  */
 .AllCategories {
-  width: 70%;
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  /* width: 70%; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* text-align: center;
   grid-template-columns: repeat(6, 1fr);
   gap: 0.5rem;
-  margin: 2rem 15%;
-  overflow: hidden;
+  margin: 2rem;
+  overflow: hidden; */
 }
-.AllCategories div {
+/* .AllCategories div {
   font-family: var(--heading-font);
   font-size: 1.6rem;
   padding: 0.5rem;
   cursor: pointer;
   border: 1px solid var(--heading-color);
   border-radius: 0.2rem;
-}
+} */
 
 .clicked {
-  background-color: var(--heading-color);
-  color: white;
+  /* background-color: var(--heading-color); */
+  color: #7a20f7;
 }
 
 .active-bar {
@@ -609,12 +655,12 @@ footer .footer .footer-div:nth-child(4) p {
 
 /* PRODUCTS SECTION CSS STARTS  */
 .products {
-  width: 85%;
+  width: 84%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
   gap: 3rem;
-  margin: 3% 8%;
+  margin: 2% 8%;
   display: none;
 }
 
@@ -625,13 +671,14 @@ footer .footer .footer-div:nth-child(4) p {
 .products .product-divs {
   border: 1px solid rgb(196, 191, 191);
   overflow: hidden;
-  transition: 0.2s ease;
   cursor: pointer;
+  transition: .5s ease;
+  border-radius: 1.5rem;
 }
 
 .products .product-divs:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transform: scale(1.02);
+  /* transform: scale(1.02); */
 }
 
 .products .product-divs p {
@@ -769,7 +816,7 @@ footer .footer .footer-div:nth-child(4) p {
 }
 .itemPreviewDiv2 form input {
   width: 100%;
-  font-size:var(--H5);
+  font-size: var(--H5);
 }
 
 /* .itemPreviewDiv2 input{
@@ -879,11 +926,11 @@ td {
   text-align: center;
   align-items: center;
 }
-th{
+th {
   font-size: var(--H5);
   font-weight: 600;
 }
-td{
+td {
   font-size: var(--H5);
   font-weight: 200;
 }
@@ -893,10 +940,6 @@ td{
   align-items: center;
   text-align: center;
 } */
-
-
-
-
 
 /* Loader styles */
 #loader {
@@ -916,10 +959,10 @@ td{
 /* Spinner animation */
 @keyframes spin {
   0% {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -927,21 +970,6 @@ td{
 #content {
   display: block;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .product-image {
   width: 10rem;
@@ -954,7 +982,7 @@ td{
 
 .discount-price {
   color: green;
-  font-weight: 300
+  font-weight: 300;
 }
 
 .add-to-cart {
@@ -1117,7 +1145,9 @@ td{
   }
   .products {
     grid-template-columns: repeat(2, 1fr);
-    margin: 3% 2%;
+    width: 94%;
+    margin: 3% 3%;
+    /* margin: 3% 2%; */
     gap: 1rem;
   }
   .AllCategories {
