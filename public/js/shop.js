@@ -61,30 +61,5 @@ allLinks.forEach((element, index) => {
     // console.log(element.innerText);
 })
 
-// let AllCategories = document.getElementById("AllCategories");
-// let OverSizedTshirtDiv = AllCategories.getElementsByTagName("div");
-
-// let targetContent = "Oversized T-Shirts";
-// let targetDiv = null;
-// for (const div of OverSizedTshirtDiv) {
-//     if (div.innerHTML.trim() === targetContent.trim()) {
-//         targetDiv = div;
-//         break;
-//     }
-// }
-
-// const mediaQuery = window.matchMedia('(max-width: 768px)');
-// function applyResponsiveStyle(event) {
-//     if (event.matches) {
-//         // When max-width is 768px or less
-//         targetDiv.style.fontSize = "1.2rem";
-//         targetDiv.style.padding = "0.1rem";
-//     }
-//     else {
-//         targetDiv.style.fontSize = "1.5rem";
-//         targetDiv.style.padding = "0.5rem";
-//     }
-// }
-// applyResponsiveStyle(mediaQuery);
-// mediaQuery.addEventListener('change', applyResponsiveStyle);
-
+const categoryBarItemsSelect = document.querySelector("#categoryBarItemsSelect");
+categoryBarItemsSelect.classList.add("hide");

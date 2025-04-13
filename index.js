@@ -31,6 +31,9 @@ app.use(express.static(path.resolve("./public")));
 
 app.use("/", staticRouter);
 app.use("/user", userRoute);
+app.get("/demo", (req, res) => {
+  res.render("demo");
+});
 
 app.listen(PORT, () => {
   console.log(`Server running on ${PORT}`);

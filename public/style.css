@@ -253,13 +253,11 @@ span {
   width: 30%;
   height: 100%;
   margin: 1% 1%;
-  /* border: 2px solid red; */
 }
 
 .wishListItemsInnerDiv1 img {
   width: 100%;
   display: block;
-  /* object-fit: cover; */
 }
 .wishListItemsInnerDiv2 h3 {
   font-size: 2.3rem;
@@ -284,7 +282,6 @@ span {
   font-size: 1.3rem;
   padding: 1rem 2.2rem;
   font-family: var(--basic-font);
-  /* margin-right: 1rem; */
   border-radius: 0.5rem;
   cursor: pointer;
   background: none;
@@ -567,6 +564,7 @@ footer .footer .footer-div:nth-child(4) p {
   overflow: hidden;
   margin-top: 5rem;
 }
+
 .headingImg img {
   width: 100%;
 }
@@ -584,23 +582,35 @@ footer .footer .footer-div:nth-child(4) p {
   margin: 3rem 8%;
   gap: 2rem;
 }
+
 .shopMainDiv .categoryBar ul{
   display: flex;
   justify-content: start;
   align-items: center;
   list-style-type: none;
-  /* padding: 0;
-  margin: 0; */
 }
+
 .shopMainDiv .categoryBar .categoryBarItems ul li{
   font-family: var(--heading-font);
   font-size: var(--H3);
   padding: 0 1.5rem;
   cursor: pointer;
-  /* border: 1px solid var(--heading-color); */
-  /* border-radius: 0.2rem; */
-  transition: all 0.3s ease-in-out;
-  /* user-select: none; */
+  transition: all 0.8s ease-in-out;
+}
+
+.shopMainDiv .categoryBar .categoryBarItems ul li:hover{
+  color: #7a20f7;
+  transition: 0.2s ;
+}
+
+.shopMainDiv .categoryBar .categoryBarSelect span{
+  font-size: var(--H3);
+  font-family: var(--heading-font);
+  font-weight: 600;
+}
+
+.hide{
+  display: none;
 }
 
 .shopMainDiv .categoryBar .categoryBarSelect select{
@@ -611,40 +621,9 @@ footer .footer .footer-div:nth-child(4) p {
   background: none;
   transition: all 0.3s ease-in-out; 
   cursor: pointer;
-  /* background-color: var(--snd-color); */
-  /* font-size: var(--H3);
-  padding: 0.5rem 1rem;
-  border-radius: 0.2rem;
-  border: 1px solid var(--heading-color);
-  background-color: var(--snd-color);
-  color: var(--text-color);
- 
- */
 }
-
-/* CATEGORY BAR CSS STARTS  */
-.AllCategories {
-  /* width: 70%; */
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: center; */
-  /* text-align: center;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 0.5rem;
-  margin: 2rem;
-  overflow: hidden; */
-}
-/* .AllCategories div {
-  font-family: var(--heading-font);
-  font-size: 1.6rem;
-  padding: 0.5rem;
-  cursor: pointer;
-  border: 1px solid var(--heading-color);
-  border-radius: 0.2rem;
-} */
 
 .clicked {
-  /* background-color: var(--heading-color); */
   color: #7a20f7;
 }
 
@@ -678,7 +657,6 @@ footer .footer .footer-div:nth-child(4) p {
 
 .products .product-divs:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  /* transform: scale(1.02); */
 }
 
 .products .product-divs p {
@@ -698,39 +676,43 @@ footer .footer .footer-div:nth-child(4) p {
 
 .itemPreview {
   margin-top: 5.4rem;
-  /* background-color: red; */
   display: flex;
   width: 100%;
 }
+
 .itemPreviewDiv1 {
   width: 60%;
-  /* background-color: aqua; */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin: 2% 2.5%;
 }
+
 .itemPreviewDiv1 img {
   cursor: pointer;
   transition: 0.5s;
 }
+
 .itemPreviewDiv1 img:hover {
   transform: scale(1.01);
 }
+
 .itemPreviewDiv2 {
   width: 40%;
-  /* background-color: rgb(38, 0, 255); */
 }
+
 .itemPreviewDiv2 h1 {
   font-size: var(--H1);
   font-family: var(--heading-font);
   padding: 3rem 0 0 0;
 }
+
 .itemPreviewDiv2 h5 {
   font-size: var(--H5);
   font-family: var(--basic-font);
   padding: 0 0 2rem 0.2rem;
 }
+
 .itemPreviewDiv2 p {
   font-size: var(--H5);
   font-family: var(--basic-font);
@@ -739,21 +721,25 @@ footer .footer .footer-div:nth-child(4) p {
   line-height: 1.5;
   color: var(--text-color);
 }
+
 .itemPreviewDiv2 h3 {
   font-size: var(--H3);
   font-family: var(--basic-font);
   padding-bottom: var(--H3);
 }
+
 .itemPreviewDiv2 h5 {
   font-size: 1.8rem;
   font-family: var(--basic-font);
   padding-bottom: var(--H3);
 }
+
 .itemPreviewDiv2 h3 span {
   font-weight: 400;
   font-size: var(--H5);
   text-decoration: line-through;
 }
+
 .itemPreviewDiv2 button {
   font-size: var(--H5);
   padding: 1rem 2.2rem;
@@ -764,17 +750,20 @@ footer .footer .footer-div:nth-child(4) p {
   border: 1px solid grey;
   margin-bottom: 2.5rem;
 }
+
 .itemPreviewDiv2 button.selected {
   background-color: var(--heading-color);
   color: white;
   border-color: #333;
 }
+
 .line {
   width: 100%;
   height: 2px;
   background-color: #000000;
   margin-bottom: 2.5rem;
 }
+
 .itemPreviewDiv2 .quantity {
   border: 1px solid rgb(70, 70, 70);
   font-size: var(--H5);
@@ -789,20 +778,24 @@ footer .footer .footer-div:nth-child(4) p {
   font-weight: 400;
   color: white;
 }
+
 .itemPreviewDiv2 .cartBtn {
   padding: 0.8rem 5rem;
   background-color: var(--heading-color);
 }
+
 .itemPreviewDiv2 .wishlistBtn {
   padding: 0.8rem 2rem;
   border: 1px solid var(--heading-color);
   color: var(--heading-color);
 }
+
 .itemPreviewDiv2 i {
   color: var(--text-color);
   font-size: var(--H4);
   padding: 0 0.5rem;
 }
+
 .itemPreviewDiv2 .pincodeCheckForm {
   border: 1px solid black;
   width: 70%;
@@ -814,16 +807,11 @@ footer .footer .footer-div:nth-child(4) p {
   border-radius: 0.3rem;
   margin-bottom: 3rem;
 }
+
 .itemPreviewDiv2 form input {
   width: 100%;
   font-size: var(--H5);
 }
-
-/* .itemPreviewDiv2 input{
-  border: 1px solid black;
-  padding: .5rem 5rem .5rem 1rem;
-  font-size: 1.8rem;
-} */
 
 /* ITEMS PAGE CSS ENDS  */
 
@@ -935,12 +923,6 @@ td {
   font-weight: 200;
 }
 
-/* th {
-  background-color: #f2f2f2;
-  align-items: center;
-  text-align: center;
-} */
-
 /* Loader styles */
 #loader {
   position: fixed;
@@ -993,13 +975,6 @@ td {
   background-color: var(--heading-color);
   font-size: var(--H5);
   margin: 1% 0;
-  /* padding: 1rem 2.2rem;  */
-  /*margin-right: 1rem;
-  border-radius: 2rem;
-  cursor: pointer;
-  background: none;
-  border: 1px solid grey;
-  margin-bottom: 2.5rem; */
 }
 
 /* CART PAGE CSS ENDS */

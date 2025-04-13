@@ -41,14 +41,24 @@
                             </ul>
                             <% } %>
                     </div>
+                    <div class="categoryBarSelect" id="categoryBarItemsSelect">   
+                        <span>Category:</span>
+                        <select name="" id="sortSelect">
+                            <!-- <option value="All">All</option> -->
+                            <% category.forEach(element=> { %>
+                                <option value="<%= element %>"><%= element %></option>
+                                <% }) %>
+                        </select>
+                    </div>
                     <div class="categoryBarSelect" id="categoryBarSelect">   
-                        <select name="" id="">
-                            <option value="Recommended">Sort by: Recommended</option>
-                            <option value="Newest">Sort by: Newest</option>
-                            <option value="lowToHigh">Sort by: Price (low to high)</option>
-                            <option value="highToLow">Sort by: Price (high to low)</option>
-                            <option value="A-Z">Sort by: Name A-Z</option>
-                            <option value="Z-A">Sort by: Name Z-A</option>
+                        <span>Sort by:</span>
+                        <select name="" id="sortSelect">
+                            <option value="Recommended">Recommended</option>
+                            <option value="Newest">Newest</option>
+                            <option value="lowToHigh">Price (low to high)</option>
+                            <option value="highToLow">Price (high to low)</option>
+                            <option value="A-Z">Name A-Z</option>
+                            <option value="Z-A">Name Z-A</option>
                         </select>
                     </div>
                 </div>
